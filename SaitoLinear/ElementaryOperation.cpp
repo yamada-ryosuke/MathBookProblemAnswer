@@ -29,7 +29,7 @@ int main()
 	const int column{inputInteger()};
 	if (row <= 0 || column <= 0)
 	{
-		output("too small.");
+		output("too small.\n");
 		return 0;
 	}
 
