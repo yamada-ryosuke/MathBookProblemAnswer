@@ -31,6 +31,9 @@ public:
 	// コピーコンストラクタ
 	Matrix(const Matrix& mat)
 		: M(mat.M), N(mat.N), container_(mat.container_){}
+	// initializer-listによる初期化
+	Matrix(const std::vector<std::vector<Fraction>>& init)
+		: M(init.size()), N(init.begin()->size()), container_(init){}
 
 	// 要素アクセス
 	RowVector& operator[](const int r) { return container_[r]; }
@@ -123,7 +126,7 @@ public:
 	}
 
 	// 逆行列
-	std::pair<bool, Matrix> inverse()
+	std::pair<bool, Matrix> inverse() const
 	{
 		if (M != N) return {false, {0, 0}};
 		Matrix cpy{*this}, inv{getOne()};
@@ -159,5 +162,23 @@ public:
 			}
 		}
 		return {true, inv};
+	}
+	// 出力
+	void output() const
+	{
+		std::vector<std::string> lines(M);
+		for (int col{}; col < N; col++)
+		{
+			int max_length{};
+			for (int row{}; row < N; row++)
+			{
+				lines[row] += (*this)[row][col].toString();
+				max_length = std::max(max_length, (int)lines[row].size());
+			}
+			for (auto& line: lines)
+				line.resize(max_length + 1, ' ');
+		}
+		for (auto& line: lines)
+			std::cout << line << std::endl;
 	}
 };

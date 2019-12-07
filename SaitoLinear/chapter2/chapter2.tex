@@ -1,0 +1,110 @@
+\documentclass{jsarticle}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{}
+./chapter2/inverseを使って解ける。途中経過を見たい場合は適宜Matrix.hppのMatrix::inverse()にoutput()を挿入すればよい。
+\[
+	\begin{array}{rrrr}
+		イ) &
+		\left(
+			\begin{array}{rrrr}
+				4 & 18 & -16 & -3\\
+				0 & -1 &   1 &  1\\
+				1 &  3 &  -3 &  0\\
+				1 &  6 &  -5 & -1
+			\end{array}
+		\right) &
+		ロ) &
+		\left(
+			\begin{array}{rrrr}
+				 -3 & -1 & 1 & -1\\
+				 -3 & -1 & 0 &  1\\
+				 -4 & -1 & 1 &  0\\
+				-10 & -3 & 1 &  1
+			\end{array}
+		\right)
+	\end{array}
+\]
+
+\section{}
+行列の変形には./chapter2/ElementaryOperationを用いた。計算過程は./chapter2/2.txt参照。\\
+変数を$x = (x_1,\ldots,x_n)$として、$\tilde{x}= ^{t}(x, -1)$と書くこととする。また、方程式の拡大行列を$\tilde{A}$と書くこととする。\\
+イ)\\
+与式$\tilde{A} \tilde{x}$を変形して、
+\begin{eqnarray*}
+	% 1行目
+	\renewcommand{\arraystretch}{2}
+	\left(
+		\begin{array}{rrrrrr}
+			1 & 0 & 0 &  2 &    0 &   0\\
+			0 & 1 & 0 &  0 & -\dfrac{5}{6} & \dfrac{1}{2}\\
+			0 & 0 & 1 & -1 &  \dfrac{1}{3} &   0\\
+			0 & 0 & 0 &  0 &    0 &   0
+		\end{array}
+	\right)
+	\tilde{x} &=& 0 \\
+	% 2行目
+	\renewcommand{\arraystretch}{2}
+	\left(
+		\begin{array}{rrr}
+			1 & 0 & 0\\
+			0 & 1 & 0\\
+			0 & 0 & 1\\
+		\end{array}
+	\right)
+	\left(
+		\begin{array}{r}
+			x_1\\ x_2\\ x_3
+		\end{array}
+	\right)
+	+
+	\left(
+		\begin{array}{rr}
+			 2 &    0\\
+			 0 & -\dfrac{5}{6}\\
+			-1 &  \dfrac{1}{3}\\
+		\end{array}
+	\right)
+	\left(
+		\begin{array}{r}
+			x_4\\ x_5
+		\end{array}
+	\right)
+	&=&
+	\left(
+		\begin{array}{r}
+			0\\ \dfrac{1}{2}\\ 0
+		\end{array}
+	\right)\\
+	% 3行目
+	\renewcommand{\arraystretch}{2}
+	\left(
+		\begin{array}{r}
+			x_1\\ x_2\\ x_3
+		\end{array}
+	\right)
+	&=&
+	\renewcommand{\arraystretch}{2}
+	\left(
+		\begin{array}{rr}
+			-2 &    0\\
+			 0 &  \dfrac{5}{6}\\
+			 1 & -\dfrac{1}{3}\\
+		\end{array}
+	\right)
+	\left(
+		\begin{array}{r}
+			x_4\\ x_5
+		\end{array}
+	\right)
+	+
+	\left(
+		\begin{array}{r}
+			0\\ \dfrac{1}{2}\\ 0
+		\end{array}
+	\right)\\
+\end{eqnarray*}
+
+\end{document}

@@ -30,7 +30,7 @@ int main()
 	if (inverse.first)
 	{
 		output("inverse:\n");
-		outputMatrix(inverse.second);
+		inverse.second.output();
 	}
 	else
 	{
@@ -63,12 +63,12 @@ void output(const std::string& str)
 
 void outputMatrix(const Matrix& matrix)
 {
-	const int size{matrix.M};
-	std::vector<std::string> lines(size);
-	for (int col{}; col < size; col++)
+	const int m{matrix.M}, n{matrix.N};
+	std::vector<std::string> lines(m);
+	for (int col{}; col < n; col++)
 	{
 		int max_length{};
-		for (int row{}; row < size; row++)
+		for (int row{}; row < m; row++)
 		{
 			lines[row] += matrix[row][col].toString();
 			max_length = std::max(max_length, (int)lines[row].size());
