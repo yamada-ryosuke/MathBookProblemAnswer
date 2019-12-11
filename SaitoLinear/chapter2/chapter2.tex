@@ -3,7 +3,7 @@
 
 \begin{document}
 
-\section{}
+\section{} % section1
 ./chapter2/inverseを使って解ける。途中経過を見たい場合は適宜Matrix.hppのMatrix::inverse()にoutput()を挿入すればよい。
 \[
 	\begin{array}{rrrr}
@@ -28,7 +28,7 @@
 	\end{array}
 \]
 
-\section{}
+\section{} % section2
 行列の変形には./chapter2/ElementaryOperationを用いた。計算過程は./chapter2/2.txt参照。\\
 変数を$x = (x_1,\ldots,x_n)$として、$\tilde{x}= ^{t}(x, -1)$と書くこととする。また、方程式の拡大行列を$\tilde{A}$と書くこととする。\\
 イ)\\
@@ -106,5 +106,132 @@
 		\end{array}
 	\right)\\
 \end{eqnarray*}
+
+\section{} % section3
+3.cpp参照
+\section{} % section4
+$x = 0$ならば階数はn。\\
+$x \neq 0$として、$y = 1 / x$と置く。\\
+\begin{eqnarray*}
+	\left(
+		\begin{array}{cccc}
+			 1 & x & \cdots & x\\
+			 x & 1 & \cdots & x\\
+			 \vdots & \vdots & \ddots & \vdots\\
+			 x & x & \cdots & 1\\
+		\end{array}
+	\right)\\
+	\xrightarrow{各行1/x倍}
+	\left(
+		\begin{array}{cccc}
+			 y & 1 & \cdots & 1\\
+			 1 & y & \cdots & 1\\
+			 \vdots & \vdots & \ddots & \vdots\\
+			 1 & 1 & \cdots & y\\
+		\end{array}
+	\right)\\
+	\xrightarrow{(1, n)成分を要に掃き出し}
+	\left(
+		\begin{array}{ccccc}
+			 0 & 0 & \cdots & 0 & 1\\
+			 1 - y & y - 1 & \cdots & 0 & 0\\
+			 \vdots & \vdots & \ddots & \vdots & \vdots\\
+			 1 - y & 0 & \cdots & y - 1 & 0\\
+			 1 - y^2 & 1 - y & \cdots & 1 - y & y\\
+		\end{array}
+	\right)\\
+	\xrightarrow{2{\sim}n-1行目をn行目に、2{\sim}n-1列目を1列目に足す}
+	\left(
+		\begin{array}{ccccc}
+			 0 & 0 & \cdots & 0 & 1\\
+			 0 & y - 1 & \cdots & 0 & 0\\
+			 \vdots & \vdots & \ddots & \vdots & \vdots\\
+			 0 & 0 & \cdots & y - 1 & 0\\
+			 1 - y^2 + (n - 2)(1 - y) & 0 & \cdots & 0 & y\\
+		\end{array}
+	\right)\\
+	\xrightarrow{1行目をn行目から引き、1行目とn行目を入れ替える}
+	\left(
+		\begin{array}{ccccc}
+			1 - y^2 + (n - 2)(1 - y) & 0 & \cdots & 0 & 0\\
+			 0 & y - 1 & \cdots & 0 & 0\\
+			 \vdots & \vdots & \ddots & \vdots & \vdots\\
+			 0 & 0 & \cdots & y - 1 & 0\\
+			 0 & 0 & \cdots & 0 & 1\\
+		\end{array}
+	\right)\\
+\end{eqnarray*}
+よって$y = 1$ならば階数は1。
+$y \neq 1$とすると
+\begin{eqnarray*}
+	\xrightarrow{1{\sim}n-1行目をy-1で割る}
+	\left(
+		\begin{array}{ccccc}
+			-n + 1 - y & 0 & \cdots & 0 & 0\\
+			 0 & 1 & \cdots & 0 & 0\\
+			 \vdots & \vdots & \ddots & \vdots & \vdots\\
+			 0 & 0 & \cdots & 1 & 0\\
+			 0 & 0 & \cdots & 0 & 1\\
+		\end{array}
+	\right)\\
+\end{eqnarray*}
+より、$y=-(n-1)$なら階数は$n-1$、$y\neq n-1$ならば階数は$n$。
+まとめると、階数は$x = 1$で$1$、$x = -\dfrac{1}{n-3}$で$n-1$、それ以外で$n$。\\
+
+\section{} % section5
+\section{} % section6
+イ) $A^{-1} = A^{k-1}$とすればよい。\\
+ロ) $A$が正則と仮定すると、$A^2 = A$の両辺に右から$A^-1$をかけて$A=E$を得る。これは$A \neq E$に矛盾する。よって$A$は正則でない。\\
+ハ) $A$が正則と仮定すると、$A^k = 0$の両辺に右から$A^-k$をかけて$E=0$を得る。これは明らかに矛盾であるから、$A$は正則でない。\\
+二) $(E + A)^-1 = \sum_{i=0}^{n-1} (-A)^i$、$(E - A)^-1 = \sum_{i=0}^{n-1} A^i$とすればよい。\\
+
+\section{} % section7
+左辺のトレースを取ると、$tr(XY - YX) = tr(XY) - tr(YX) = 0$。\\
+右辺のトレースを取ると、$tr(E_n) = n$。\\
+よって、条件を満たす行列$X, Y$は存在しない。\\
+
+\section{} % section8
+\section{} % section9
+\section{} % section10
+\section{} % section11
+イ)\\
+$(P - E)$と$(P + E)$、及び$(P - E)$と$(P + E)^{-1}$が可換であることを確認しておく。\\
+これは
+\begin{equation*}
+	(P - E)(P + E) = P^2 - E = (P + E)(P - E)
+\end{equation*}
+及び
+\begin{eqnarray*}
+	(P - E)(P + E)^{-1} &=& (P + E)^{-1} (P + E)(P - E)(P + E)^{-1}\\
+	&=& (P + E)^{-1} (P - E)(P + E)(P + E)^{-1}\\
+	&=& (P + E)^{-1} (P - E)\\
+\end{eqnarray*}
+によって証明される。\\
+これにより、
+\begin{eqnarray*}
+	^t A &=& (P - E)(P + E)^{-1}\\
+	&=& (^t P + ^t E)^{-1} (^t P - ^t E)\\
+	&=& (P^{-1} + E)^{-1} (P^{-1} - E)\\
+	&=& (P^{-1} + E)^{-1} P^{-1}P(P^{-1} - E)\\
+	&=& (E + P)^{-1}(E - P)\\
+	&=& -(P - E)(P + E)^{-1}\\
+	&=& -A
+\end{eqnarray*}
+が示された。\\
+ロ)\\
+\begin{eqnarray*}
+	E - A &=& (P + E)(P + E)^{-1} - (P - E)(P + E)^{-1}\\
+	&=& 2(P + E)^{-1}\\
+\end{eqnarray*}
+であるから、$(E - A)^{-1} = \dfrac{1}{2}(P + E)$とすればよい。\\
+ハ)\\
+\begin{eqnarray*}
+	A &=& (P - E)(P + E)^{-1}\\
+	A(P + E) &=& P - E\\
+	(A - E)P &=& -(A + E)\\
+	P &=& (A + E)(E - A)^{-1}\\
+\end{eqnarray*}
+
+\section{} % section12
 
 \end{document}
