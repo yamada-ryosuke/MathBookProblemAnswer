@@ -1,0 +1,138 @@
+\documentclass{jsarticle}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+
+\begin{document}
+
+\section{集合の対等と濃度} % section1
+\subsection{} % subsection1
+\noindent
+(1.6) $card A = \mathfrak{m}$である集合$A$をとると, $A$上の恒等写像は$A$からへの単射だから$\mathfrak{m} \leq \mathfrak{m}$.\\
+(1.8) $card A = \mathfrak{m}$, $card B = \mathfrak{n}$, $card C = \mathfrak{p}$である集合$A$, $B$, $C$をとると, 単射$f:A \rightarrow B$, $g:B \rightarrow C$がとれる. $g \circ f$は$A$から$C$への単射なので$\mathfrak{m} \leq \mathfrak{p}$.
+
+\subsection{} % subsection2
+$X \subset Y \subset Z$より単射$f: X \rightarrow Y$, $g: Y \rightarrow Z$が, $X \sim Z$より全単射$h: Z \sim X$がとれる. このとき$h \circ g$, $f \circ h$はそれぞれ$X \rightarrow Y$, $Y \rightarrow Z$の単射なのでBernsteinの定理より$X \sim Y$, $Y \sim Z$.
+
+\subsection{} % subsection3
+$S$を$\mathbb{R}$の開区間$O$を含むような$\mathbb{R}$の部分集合とする. $O$から$S$への標準単射, $S$から$\mathbb{R}$への標準単射を考えると$card O \leq card S$かつ$card S \leq card \mathbb{R}$であり, しかも$card O = \mathbb{R}$なのでBernsteinの定理より$card S = \mathbb{R}$.
+
+\subsection{} % subsection4
+$b \in B$をとると単射$f: A \rightarrow (A \times B)$を各$a \in A$に対して$f(a) = (a, b)$と定義できるので$card (A \times B) \geq A$.
+
+\subsection{} % subsection5
+選択公理により各$\lambda \in \Lambda$に対して$f(\lambda) \in A_\lambda$となるように写像$f: \Lambda \rightarrow \bigcup_{\lambda \in \Lambda}A_\lambda$をとれる. $\lambda_1, \lambda_2 \in \Lambda$が$\lambda_1 \neq \lambda_2$ならば$f(\lambda_1) \in A_{\lambda_1}$かつ$f(\lambda_2) \in A_{\lambda_2}$だが$A_{\lambda_1} \cap A_{\lambda_2} = \phi$なので$f(\lambda_1) \neq f(\lambda_2)$であるから$f$は単射. よって$card \left(\bigcup_{\lambda \in \Lambda}A_\lambda\right) \geq card \Lambda$.
+
+\subsection{} % subsection6
+選択公理により$a \in \prod_{\lambda \in \Lambda}A_\lambda$がとれる. 集合族$(B_\lambda)_{\lambda \in \Lambda} = (B_\lambda)_{\lambda \in \Lambda} - {a_\lambda})$を定義すると各$\lambda \in \Lambda$に対して$B_\lambda \neq \phi$なので, 選択公理により$a' \in \prod_{\lambda \in \Lambda}B_\lambda$をとれる. このような$b$は各$\lambda \in \Lambda$に対して$b_{\lambda_0} \neq a_{\lambda_0}$であり, また$b \in \prod_{\lambda \in \Lambda}A_\lambda$とみなせる. このとき写像$f: \Lambda \rightarrow \prod_{\lambda \in \Lambda}A_\lambda$を各$\lambda_0 \in \Lambda$に対して
+\begin{equation*}
+	f(\lambda_0)_\lambda = 
+	\begin{cases}
+		a_\lambda & (\lambda \neq \lambda_0)\\
+		b_\lambda & (\lambda = \lambda_0)
+	\end{cases}
+\end{equation*}
+となるように定めると, $f$は単射であるから$card (\prod_{\lambda \in \Lambda}A_\lambda) \geq card A$.
+
+\subsection{} % subsection7
+$A$から$B$への全射を$f$とする. この$f$に付随する同値関係を$R$とすると, $A / R$から$B$への全単射が存在する(一章(6.4)とその直後の考察より). よって$A / R$と$B$は対等.
+
+\subsection{} % subsection8
+$B_0 = {-1, 1}$なので正整数$n$に対して$A_n = B_n = \{\pm 2^{-n}\}$. ゆえに$A_* = \{2^{-n}| n \in \mathbb{N}\}$, $B_* = \{2^{-n}| n \in \mathbb{N} \cup \{0\}\}$. よって$F: A \rightarrow B$は各$a$に対して
+\begin{equation*}
+	F(a) =
+	\begin{cases}
+		a & (a \notin A_*)\\
+		2a & (a \in A_*)
+	\end{cases}
+\end{equation*}
+
+
+\section{可算集合, 非可算集合} % section2
+\subsection{} %subsection1
+$S$を可算集合の無限部分集合とする. $S$は可算集合の部分集合より$card S \leq \mathbb{a}$. $S$は無限集合より$S \geq \mathfrak{a}$. よってBernsteinの定理より$card S = \mathfrak{a}$.
+
+\subsection{} %subsection2
+$S = \mathbb{Q} - \{0\}$は可算集合だから$S$から$A$への全単射$f$が存在する. $S$の部分集合族$(B_n)_{n \in \mathbb{N}}$を各$n \in \mathbb{N}$に対して$B_n = \{\dfrac{q}{p} | pとqは互いに素な整数. p \geq 1\}$と定義する. この$(B_n)_{n \in \mathbb{N}}$は$S$の部分集合族として(i)(ii)(iii)を満たすことを示す. 各$n \in \mathbb{N}$に対して$\{\dfrac{1}{n} + n_0\}_{n_0 \in \mathbb{N}} \in B_n \in S$なので$B_n$は可算集合. 0でない任意の有理数$x$に対してただ一つの$B_n$が存在して$x \in B_n$なので$S = \bigcup_{n = 1}^{\infty}$かつ$n \neq n' \Rightarrow A_n \cap A_{n'} = \phi$. よって$(A_n)_{n \in \mathbb{N}}$を各$n \in \mathbb{N}$に対して$A_n = f(B_n)$と定義するとこれに対しても$A$の部分集合族としてもちろん(i)(ii)(iii)が成り立つ.
+
+\subsection{} %subsection3
+有理数a, bを端点とする開区間(a, b)全体の集合は明らかに集合$A = \{(a, b) \in \mathbb{Q} \times \mathbb{Q}| a < b\}$と対等. $\mathbb{N} \sim \{(0, n) \in \mathbb{Q} \times \mathbb{Q}| n \in \mathbb{N}\} \subset A \subset \mathbb{Q} \times \mathbb{Q} \sim \mathbb{Q}$なので$A$は可算集合.
+
+\subsection{} %subsection4
+$\mathfrak{J}$の各元は有理数を含む. 選択公理より写像$f: \mathfrak{J} \rightarrow \mathbb{Q}$が存在して各$I \in \mathfrak{J}$に対して$f(I) \in I$が成り立つ. $\mathfrak{J}$は互いに素なので$f$が単射だから$card \mathfrak{J} \leq card \mathbb{Q}$, すなわち$\mathfrak{J}$はたかだか可算.
+
+\subsection{} %subsection5
+$\Lambda = \mathbb{N} \cup \{0\}$とすると$\Lambda$は可算集合. $\mathfrak{A}$の部分集合族$(A_n)_{n \in \Lambda}$を各$n \in \Lambda$に対して$A_n = \{S \in \mathfrak{A}| card S = n\}$として定義する. 各$n \in\Lambda$に対して$A_n$が空でない有限集合なので$\mathfrak{A} = \bigcup_{n = 0}^{\infty}A_n$は可算集合.
+
+\subsection{} %subsection6
+有理整数を係数とする多項式の全体を$A$とする. 写像$h: A \rightarrow \mathbb{N}$を$f(x) = \sum_{k = 0}^n a_k x^k \in A$$(a_n \neq 0, n \geq 1)$に対して$h(f) = n + \sum_{k = 0}^n |a_k|$と定める. $h(f)$の各項は非負なので$m \in \mathbb{N}$に対して, $h^{-1}(m)$は有限集合になる. $h^{-1}(m)$の各元$f$に対する方程式$f(x) = 0$の根は高々$n$個なので$h^{-1}(m)$の元のから得られる方程式の根の全体の和集合$B_m$は有限集合. よって代数的数全体の集合は$\bigcup_{m \in \mathbb{N}}B_m$なので可算集合.
+
+\subsection{} %subsection7
+$S$を無理数全体の集合とする. $S$が有限集合とすると$\mathbb{R} = S \cup \mathbb{Q}$が可算集合となり矛盾するので$card S$は無限集合. $S$の可算部分集合$P$をとる. $P$は可算なので$P \cup \mathbb{Q}$も可算であり全単射$f': P \rightarrow P \cup \mathbb{Q}$が存在する. よって写像$f: S \rightarrow \mathbb{R}$を各$x \in S$に対して
+\begin{equation*}
+	f(x) =
+	\begin{cases}
+		f'(x) & x \in P\\
+		x & x \notin P
+	\end{cases}
+\end{equation*}
+と定義すると$f$は全単射であるから$card S = \aleph$.
+
+
+\section{濃度の演算} %section3
+\subsection{} %subsection1
+\noindent
+濃度$\mathfrak{m}, \mathfrak{n}, \mathfrak{p}, \mathfrak{m'}, \mathfrak{n'}$に対して$\mathfrak{m} \le \mathfrak{m'}, \mathfrak{n} \le \mathfrak{n'}$が成り立っているとする.
+$card A = \mathfrak{m}$, $card B = \mathfrak{n}$, $card C = \mathfrak{p}$, $card A' = \mathfrak{m}'$, $card B' = \mathfrak{n}'$となる集合$A$, $B$, $C$, $A'$, $B'$をとっておく.\\
+(3.1) $\mathfrak{m} + \mathfrak{n} = card (A \cup B) = card (B \cup A) = \mathfrak{n} + \mathfrak{m}$.\\
+(3.2) $(\mathfrak{m} + \mathfrak{n}) + \mathfrak{p} = card (A \cup B \cup C) = \mathfrak{n} + (\mathfrak{m} + \mathfrak{p})$.\\
+(3.3) $\mathfrak{m} + 0 = card (A \cup \phi) = card A = \mathfrak{m}$.\\
+(3.4) $A \cup B$から$A' \cup B'$への包含写像をとれるので$\mathfrak{m} + \mathfrak{n} = card (A \cup B) \leq card (A' \cup B') = \mathfrak{n'} + \mathfrak{m'}$.\\
+(3.5) $A \times B \ni (a, b) \rightarrow (b, a) \in B \times A$は全単射なので$\mathfrak{mn} = card(A \times B) = card(B \times A) = \mathfrak{nm}$.\\
+(3.6) $\mathfrak{(mn)p} = card(A \times B \times C) = \mathfrak{m(np)}$\\
+(3.7) $\mathfrak{m} \cdot 0 = card(A \times \phi) = card \phi = 0$\\
+$一元集合\{a\}$をとると$A \times \{a\} \ni (x, a) \rightarrow x \in A$が全単射となるので$\mathfrak{m} \cdot 1 = card(A \times \{a\}) = card A = \mathfrak{m}$.\\
+(3.8) $A \times B$から$A' \times B'$への包含写像をとれるので$\mathfrak{mn} \le \mathfrak{m'n'}$.\\
+(3.9) $(A \cup B) \times C = (A \times C) \cup (B \times C)$より$(\mathfrak{m} + \mathfrak{n}) \mathfrak{p} = \mathfrak{m} \mathfrak{p} + \mathfrak{n} \mathfrak{p}$.
+
+\subsection{} %subsection2
+全単射$f:A \rightarrow A'$, $g:B \rightarrow B'$をとると全単射$A \times B \ni (x, y) \rightarrow (f(x), g(y)) \in A' \times B'$を構成できる.
+
+\subsection{} %subsection3
+集合$A, B, A', B'$を$card A = \mathfrak{m}, card B = \mathfrak{n}, card A' = \mathfrak{m'}, card B' = \mathfrak{n'}, A \subset A', B \subset B'$となるよう定義する. $n' \ge 1$より$a \in B$がとれる. 写像$F:B^A \rightarrow B'^{A'}$を各$f \in B^A$に対して
+\begin{equation*}
+	F(f)(x) = \begin{cases}
+		f(x) & (x \in A)\\
+		a & (x \notin A)
+	\end{cases}
+\end{equation*}
+となるよう定めれば$F$は単射なので$\mathfrak{n}^\mathfrak{m} \le \mathfrak{n'}^\mathfrak{m'}$.
+
+\subsection{} %subsection4
+$2^\mathfrak{c} = 2^\mathfrak{ac} = (2^\mathfrak{a})^\mathfrak{c} = \mathfrak{c}^\mathfrak{c}$.
+一方$\mathfrak{a}^\mathfrak{c} = \mathfrak{a}^\mathfrak{ac} = (\mathfrak{a}^\mathfrak{a})^\mathfrak{c} = \mathfrak{c}^\mathfrak{c}$.
+
+\subsection{} %subsection5
+$card A = \mathfrak{m}, card B = \aleph_0$となるよう互いに素な集合$A, B$をとる. $B$は$A \cup B$の可算部分集合であり$A \cup B - B = A$は無限集合なので定理6より$\mathfrak{m} + \aleph_0 = card(A \cup B) = card(A) = \mathfrak{m}$.
+
+\subsection{} %subsection6
+(a) $\aleph^\mathfrak{n} = \aleph_0^{\aleph_0 \mathfrak{n}} = \aleph_0^{\aleph_0} = \aleph$.\\
+(b) $\mathfrak{f} \le \mathfrak{f} + \mathfrak{n}$は明らか.\\
+$\mathfrak{n} + \mathfrak{f} \le \mathfrak{f} + \mathfrak{f} = 2 \mathfrak{f} = 2^1 \cdot 2^\aleph = 2^{1 + \aleph} = 2^\aleph = \mathfrak{f}$.\\
+(c) $\mathfrak{nf} \ge \mathfrak{f}$は明らか.\\
+$\mathfrak{nf} \le \mathfrak{ff} = \mathfrak{f}^2 = (2^\mathfrak{\aleph})^2 = 2^{2\mathfrak{\aleph}} = 2^\mathfrak{\aleph} = \mathfrak{f}$.\\
+(d) $\mathfrak{f^n} \ge \mathfrak{f}$は明らか.\\
+$\mathfrak{f^n} = 2^{\aleph \mathfrak{n}} = 2^{\aleph} = \mathfrak{f}$.\\
+(e) $2^\mathfrak{f} \le \mathfrak{n^f}$は明らか.\\
+$\aleph \mathfrak{f} = \aleph^1 \aleph^\aleph = \aleph^{1 + \aleph} = \aleph^\aleph = \mathfrak{f}$なので$2^\mathfrak{f} = 2^{\aleph \mathfrak{f}} = \mathfrak{f}^\mathfrak{f}$.
+
+\subsection{} %subsection7
+$A = \mathbb{R}$の場合を示せば, 全単射による$A_\lambda$の像を考えることにより一般の$A$に対しても示される. $\Lambda = [0, 1)$とし, $A_\lambda = \{n + \lambda | n \in \mathbb{Z}\}$とすれば$\mathbb{R}$は条件(i)(ii)(iii)を満たす. 
+
+\subsection{} %subsection8
+各非負整数$n$に対して$A_n = {S \subset \mathbb{R} | card S = n}$とする. このとき$card A_0 = 1$, $card A_n = \aleph(n \ge 1)$であることを示す. まず$A_0 = \{\{\}\}$, $card A_1 = card \{\{x\} | x \in \mathbb{R}\} = \aleph$である. $card A_n = \aleph$ならば$\aleph \le card A_n \le card A_{n + 1} \le card(A_n \times \mathbb{R}) = \aleph$であり$card A_{n + 1} = \aleph$なので数学的帰納法により示される. よって$\mathbb{R}$の有限部分集合全体の集合の濃度は$card \bigcup_{n \ge 0}A_n = 1 + \aleph \times \aleph = \aleph$.
+
+\subsection{} %subsection9
+$A$の有限部分集合全体の集合を$\mathfrak{B}$とする. $\mathfrak{B}$は前問と同様にして$card \mathfrak{B}$であることが分かる. また, $\mathfrak{A}$は各$n \in \mathbb{N}$に対して$(n)$を含むので無限集合である. $A$の部分集合全体の集合は$\mathfrak{A} \cup \mathfrak{B}$であるが, この濃度は$\aleph$であるから, 定理6により$card \mathfrak{A} = \aleph$である.
+
+\end{document}

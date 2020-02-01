@@ -1,0 +1,762 @@
+\documentclass{jsarticle}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+
+\begin{document}
+
+\section{集合の概念}	% section1
+\subsection{}	% subsection1
+$B=\{a\}$と書くこととする.
+
+$\Rightarrow$を示す. $a \in A$を仮定する.\\
+$x \in B$とすると, $x = a$だから$x \in A$. よって$\{a\} \subset A$が示された.
+
+$\Leftarrow$を示す. ${a} \subset A$を仮定する.\\
+$a \in B$かつ$B \subset A$より$a \in A$.
+
+よって題意は示された.
+
+\subsection{}	% subsection2
+$\{x| x = 1 またはx = 2 またはx = 3\}$, $\{x| x \in \mathbb{N} かつ x \in [1, 3]\}$など.
+
+\subsection{}	% subsection3
+\noindent
+(a) $\left\{\dfrac{1 \pm \sqrt{3}}{2}, \dfrac{-1 \pm \sqrt{3}}{2}, \pm{1}\right\}$
+(b) $\left\{\pm{\tan\dfrac{\pi}{8}}, \pm{\tan\dfrac{3\pi}{8}}\right\}$
+(c) $\phi$
+(d) $\{-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8\}$\\[1.5ex]
+(e) ${2, 6, \cdots, 4n - 2, \cdots}$
+(f) $\phi$
+
+\subsection{}	% subsection4
+$x = a_x + b_x\sqrt{2}$, $y = a_y + b_y\sqrt{2}$とする.ただし$a_x, b_x, a_y, b_y \in \mathbb{Q}$.\\
+(i)\\
+$x + y = (a_x + a_y) + (b_x + b_y)\sqrt{2}$であるから$x + y \in A$.\\
+$x - y = (a_x - a_y) + (b_x - b_y)\sqrt{2}$であるから$x - y \in A$.\\
+$xy = (a_x a_y + 2 b_x b_y) + (a_x b_y + b_x a_y)\sqrt{2}$であるから$xy \in A$.\\
+(ii)\\
+\indent
+$a_x, b_x \in \mathbb{Q}$かつ$a_x, b_x \neq 0$より$a_x^2 \neq 2b_x^2$であるから, $z = \dfrac{a_x}{a_x^2 - 2b_x^2} - \dfrac{b_x}{a_x^2 - 2b_x^2}\sqrt{2}$とおけば$xz = 1$.すなわち$z = x^{-1}$であり, しかも$z \in A$であるから$x^{-1} \in A$.\\
+$\mathbb{Z}$の場合,(i)は成り立つことが$\mathbb{Q}$の場合と全く同様に示される. (ii)は$2 \in A$であるが$\dfrac{1}{2} \notin A$であることから成り立たないことが分かる.
+
+\subsection{}	% subsection5
+$X = \left( \begin{array}{rr}a_x & b_x\\ -\overline{b_x} & \overline{a_x}\end{array}\right)$,
+$Y = \left( \begin{array}{rr}a_y & b_y\\ -\overline{b_y} & \overline{a_y}\end{array}\right)$とする.
+ただし,$a_x, b_x, a_y, b_y \in \mathbb{C}$.\\
+$X + Y = \left( \begin{array}{rr}a_x + a_y & b_x + b_y\\ -\overline{b_x + b_y} & \overline{a_x + a_y}\end{array}\right)$であるから, $X + Y \in A$.\\
+$X - Y = \left( \begin{array}{rr}a_x - a_y & b_x - b_y\\ -\overline{b_x - b_y} & \overline{a_x - a_y}\end{array}\right)$であるから, $X - Y \in A$.\\
+$XY = \left( \begin{array}{rr}a_xa_y - b_x\overline{b_y} & a_xb_y + b_x\overline{a_y}\\ -\overline{a_xb_y + b_x\overline{a_y}} & \overline{a_xa_y - b_x\overline{b_y}}\end{array}\right)$であるから, $XY \in A$.\\
+$a_x \neq 0$または$b_x \neq 0$なら$a_x\overline{a_x} + b_x\overline{b_x} > 0$だから
+$Z = \left( \begin{array}{rr}\dfrac{\overline{a_x}}{a_x\overline{a_x} + b_x\overline{b_x}} & \dfrac{-\overline{b_x}}{a_x\overline{a_x} + b_x\overline{b_x}}\\ -\overline{\dfrac{-\overline{b_x}}{a_x\overline{a_x} + b_x\overline{b_x}}} & \overline{\dfrac{\overline{a_x}}{a_x\overline{a_x} + b_x\overline{b_x}}}\end{array}\right)$とおけば$XZ = I_2$.すなわち$Z = X^{-1}$であり,しかも$Z \in A$であるから$X^{-1} \in A$
+
+
+\section{集合の間の演算} % section2
+\subsection{}	% subsection1
+\noindent
+(a)
+\begin{eqnarray*}
+	(A \cup B) \cap (A \cup B^c)
+	&=& A \cup (B \cap B^c)\\
+	&=& A \cup \phi\\
+	&=& A
+\end{eqnarray*}
+より$(A \cup B) \cap (A \cup B^c) = A$. 各行の変形には(2.10)', (2.12), (2.9)を用いた.\\
+(b)
+\begin{eqnarray*}
+	(A \cup B) \cap (A^c \cup B) \cap (A \cup B^c)
+	&=& A \cap (A^c \cup B)\\
+	&=& (A \cap A^c) \cup (A \cap B)\\
+	&=& \phi \cup (A \cap B)\\
+	&=& A \cap B
+\end{eqnarray*}
+より$(A \cup B) \cap (A^c \cup B) \cap (A \cup B^c) = A \cap B$. 各行の変形には前問(a), (2.10)', (2.12), (2.9)を用いた.\\
+
+\subsection{}	% subsection2
+$(左辺) \Rightarrow (中辺)$を示す. $A \cap B = \phi$を仮定する.\\
+$x \in B$とする. $x \in A$と仮定すると$x \in A \cap B$となり矛盾するため, $x \notin A$. すなわち$x \in A^c$であるから, $B \subset A^c$が示された.
+
+$(左辺) \Leftarrow (中辺)$を示す. $B \subset A^c$を仮定する.\\
+(1.5)より$\phi \subset A \cap B$. $\exists{x}(x \in A \cap B)$を仮定すると$x \in B \subset A^c$より$x \in A^c$でありこれは$x \in A$に矛盾. すなわち$\forall{x}(x \notin A \cap B)$であるから, $A \cap B \subset \phi$. よって$A \cap B = \phi$.
+
+ゆえに,$(左辺) \Leftrightarrow (中辺)$が示された.
+
+同様にして$(左辺) \Leftrightarrow (右辺)$も示されるから, 題意も示された.
+
+\subsection{}	% subsection3
+\noindent
+(a)\\
+\begin{eqnarray*}
+	x \in A - B
+	&\Leftrightarrow& x \in A かつ x \notin B\\
+	&\Leftrightarrow& x \in A かつ x \in B^c\\
+	&\Leftrightarrow& x \in A \cap B^c
+\end{eqnarray*}
+より$(第一辺) = (第四辺)$. 以降の証明にはこの等式も用いる.
+\begin{eqnarray*}
+	(A \cup B) - B
+	&=& (A \cup B) \cap B^c\\
+	&=& (A \cap B^c) \cup (B \cap B^c)\\
+	&=& A \cap B^c
+\end{eqnarray*}
+より$(第二辺) = (第四辺)$.
+\begin{eqnarray*}
+	A - (A \cap B)
+	&=& A \cap (A \cap B)^c\\
+	&=& A \cap (A^c \cup B^c)\\
+	&=& (A \cap A^c) \cup (A \cap B^c)\\
+	&=& A \cap B^c
+\end{eqnarray*}
+より$(第二辺) = (第四辺)$.\\
+よって題意が示された.\\
+(b)
+\begin{eqnarray*}
+	A - B = A
+	&\Leftrightarrow& A \cap B^c = A\\
+	&\Leftrightarrow& A \subset B^c\\
+	&\Leftrightarrow& A \cap B = \phi
+\end{eqnarray*}
+(c)
+\begin{eqnarray*}
+	A - B = \phi
+	&\Leftrightarrow& A \cap B^c = \phi\\
+	&\Leftrightarrow& A \subset B
+\end{eqnarray*}
+
+\subsection{}	% subsection4
+\noindent
+(a)
+\begin{eqnarray*}
+	A - (B \cup C)
+	&=& A \cap (B \cup C)^c\\
+	&=& A \cap B^c \cap C^c\\
+	&=& (A \cap B^c) \cap (A \cap C^c)\\
+	&=& (A - B) \cap (A - C)
+\end{eqnarray*}
+(b)
+\begin{eqnarray*}
+	A - (B \cap C)
+	&=& A \cap (B \cap C)^c\\
+	&=& A \cap (B^c \cup C^c)\\
+	&=& (A \cap B^c) \cup (A \cap C^c)\\
+	&=& (A - B) \cup (A - C)
+\end{eqnarray*}
+(c)
+\begin{eqnarray*}
+	(A \cup B) - C
+	&=& (A \cup B) \cap C^c\\
+	&=& (A \cap C^c) \cup (B \cap C^c)\\
+	&=& (A - C) \cup (B - C)
+\end{eqnarray*}
+(d)
+\begin{eqnarray*}
+	(A \cap B) - C
+	&=& (A \cap B) \cap C^c\\
+	&=& (A \cap C^c) \cap (B \cap C^c)\\
+	&=& (A - C) \cap (B - C)
+\end{eqnarray*}
+(e)
+\begin{eqnarray*}
+	A \cap (B - C)
+	&=& A \cap (B \cap C^c)\\
+	&=& (A \cap B \cap A^c) \cup (A \cap B \cap C^c)\\
+	&=& (A \cap B) \cap (A^c \cup C^c)\\
+	&=& (A \cap B) \cap (A \cap C)^c\\
+	&=& (A \cap B) - (A \cap C)
+\end{eqnarray*}
+
+\subsection{}	% subsection5
+(a)
+\begin{eqnarray*}
+	(A - B) - C
+	&=& A \cap B^c \cap C^c\\
+	&=& A \cap (B \cup C)^c\\
+	&=& A - (B \cup C)
+\end{eqnarray*}
+(b)
+\begin{eqnarray*}
+	A - (B - C)
+	&=& A \cap (B \cap C^c)^c\\
+	&=& A \cap (B^c \cup C)\\
+	&=& (A \cap B^c) \cup (A \cap C)\\
+	&=& (A - B) \cup (A \cap C)
+\end{eqnarray*}
+
+\subsection{}	% subsection6
+\begin{eqnarray*}
+	A \cup (B \cap C)
+	&=& (A \cup B) \cap (A \cup C)\\
+	&=& (A \cup B) \cap C
+\end{eqnarray*}
+
+\subsection{}	% subsection7
+\noindent
+(a)
+\begin{eqnarray*}
+	A \triangle B
+	&=& (A \cap B^c) \cup (A^c \cap B)\\
+	&=& (B \cap A^c) \cup (B^c \cap A)\\
+	&=& A \triangle B
+\end{eqnarray*}
+(b)
+\begin{eqnarray*}
+	A \triangle B
+	&=& (A \cap B^c) \cup (A^c \cap B)\\
+	&=& (A \cap A^c) \cup (A \cap B^c) \cup (B \cap A^c) \cup (B \cap B^c)\\
+	&=& (A \cap (A^c \cup B^c)) \cup (B \cap (A^c \cup B^c))\\
+	&=& (A \cup B) \cap (A^c \cup B^c)\\
+	&=& (A \cup B) - (A \cap B)
+\end{eqnarray*}
+(c)
+\begin{eqnarray*}
+	(A \triangle B) \triangle C
+	&=& (((A \cap B^c) \cup (A^c \cap B)) \cap C^c) \cup (((A \cap B^c) \cup (A^c \cap B))^c \cap C)\\
+	&=& (A \cap B^c \cap C^c) \cup (A^c \cap B \cap C^c) \cup ((A^c \cup B) \cap (A \cup B^c) \cap C)\\
+	&=& (A \cap B^c \cap C^c) \cup (A^c \cap B \cap C^c) \cup (((A^c \cap A) \cup (B \cap A) \cup (A^c \cap B^c) \cup (B \cap B^c)) \cap C)\\
+	&=& (A \cap B^c \cap C^c) \cup (A^c \cap B \cap C^c) \cup (B \cap A \cap C) \cup (A^c \cap B^c \cap C)\\
+	&=& (A \cap B \cap C) \cup (A \cap B^c \cap C^c) \cup (A^c \cap B \cap C^c) \cup (A^c \cap B^c \cap C)
+\end{eqnarray*}
+またこれを用いて,
+\begin{eqnarray*}
+	A \triangle (B \triangle C)
+	&=& (B \triangle C) \triangle A\\
+	&=& (B \cap C \cap A) \cup (B \cap C^c \cap A^c) \cup (B^c \cap C \cap A^c) \cup (B^c \cap C^c \cap A)\\
+	&=& (A \cap B \cap C) \cup (A \cap B^c \cap C^c) \cup (A^c \cap B \cap C^c) \cup (A^c \cap B^c \cap C)
+\end{eqnarray*}
+よって題意は示された.\\
+(d)
+\begin{eqnarray*}
+	A \cap (B \triangle C)
+	&=& A \cap ((B \cup C) - (B \cap C))\\
+	&=& (A \cap (B \cup C)) - (A \cap (B \cup C))\\
+	&=& ((A \cap B) \cup (A \cap C)) - ((A \cap B) \cup (A \cap C))\\
+	&=& (A \cap B) \triangle (A \cap C)
+\end{eqnarray*}
+
+\subsection{}	% subsection8
+\noindent
+(a)
+\begin{eqnarray*}
+	A \triangle \phi
+	&=& (A \cap \phi^c) \cup (A^c \cap \phi)\\
+	&=& A \cap X\\
+	&=& A
+\end{eqnarray*}
+(b)
+\begin{eqnarray*}
+	A \triangle X
+	&=& (A \cap X^c) \cup (A^c \cap X)\\
+	&=& (A \cap \phi) \cup A^c\\
+	&=& A^c
+\end{eqnarray*}
+(c)
+\begin{eqnarray*}
+	A \triangle A
+	&=& (A \cap A^c) \cup (A^c \cap A)\\
+	&=& \phi
+\end{eqnarray*}
+(d)
+\begin{eqnarray*}
+	A \triangle A^c
+	&=& (A \cap A) \cup (A^c \cap A^c)\\
+	&=& X
+\end{eqnarray*}
+\subsection{}	% subsection9
+7(a)(c)及び8により$\triangle$は単位元を$\phi$, $A$の逆元を$A$とするアーベル群であることをが分かるから
+\begin{eqnarray*}
+	A_1 \triangle A_2 &=& B_1 \triangle B_2\\
+	A_1 \triangle A_2 \triangle A_2 \triangle B_1 &=& B_1 \triangle B_2 \triangle A_2 \triangle B_1\\
+	A_1 \triangle B_1 &=& A_2 \triangle B_2
+\end{eqnarray*}
+
+\section{対応, 写像}	% section3
+\subsection{} % subsection1
+$C = A \times B$とおく. 定理1により$C$の部分集合の個数を求めればいいことが分かる. $S \subset C$とすると, 任意の$x \in C$に対して$x \in S$の真偽値が定まる. 一方異なる$C$の部分集合については真偽値の異なる$x \in C$が存在する. よって$A$と$B$の対応は$C$の各元に対するこの真偽値の組み合わせによって特徴づけられる. よって, 各元に対してありえる真偽値は2通り, $C$の元の個数は$mn$であり, $C$の各元に対する真偽値は独立に定められるので, 求める個数は$2^{mn}$.
+
+\subsection{} % subsection2
+各候補者$y \in Y$について$\Gamma^{-1}(y)$は$\{x | \Gamma(x) = y\}$, すなわち$y$に投票した選挙人の全体である.
+
+\subsection{} % subsection3
+(i)は任意の$a \in A$に$b \in B$が存在して$b \in \Gamma(a)$であることを意味する.
+(ii)は$\forall{b, b' \in B}(b \neq b' ならば \Gamma^{-1}(b) \cap \Gamma^{-1}(b') = \phi)$と書けるが, これを同値変形すると, $\forall{b, b' \in B}(\exists{a \in A}(b \in \Gamma(a) かつ b' \in \Gamma(a)) ならば b = b')$が得られる. 
+
+$\Gamma$が写像であると仮定して(i)(ii)を示す.\\
+(i) 写像の定義により任意の$a \in A$に$b \in B$が少なくとも一つ存在する.\\
+(ii) $a \in A$が存在して$b \in \Gamma(a) かつ b' \in \Gamma(a)$ならば$\Gamma(a)$が一元集合であることから$b = b'$.
+よって(i)(ii)が示された.
+
+(i)(ii)を仮定して$\Gamma$が写像であることを示す.\\
+任意の$a \in A$,$b, b' \in \Gamma(a)$をとると(ii)により$b = b'$. これは$\Gamma(a)$が一元集合または空集合であることを意味するが(i)より$b \in \Gamma(a)$を満たすbが少なくとも一つ存在するので$\Gamma(a)$は一元集合. これは$\Gamma$が写像であることを意味する.
+
+よって題意は示された.
+
+\subsection{} % subsection4
+$G(I_A) = {(a, a)| a \in A}$である. 何故なら$(a, b) \in A \times A$について$(a, b) \in G(I_A)$ならば$b = I_A(a) = a$であるし, $b = a$ならば$b = a = I_A(a)$だからである.\\
+$b_0$への定値写像$f$のグラフ$G(f)$は${(a, b_0) | a \in A}$である. 何故なら$(a, b) \in A \times B$について$(a, b) \in G(f)$ならば$(a, b) = (a, f(a)) = (a, b_0)$であるし, $b = b_0$ならば$b = b_0 = f(a)$だからである.
+
+\section{写像に関する諸概念} % section4
+\subsection{} % subsection1
+\noindent
+(4.2) $y \in B$について
+\begin{eqnarray*}
+	y \in f(P_1 \cup P_2)
+	&\Leftrightarrow& \exists(x \in A)(f(x) = yかつx \in P_1 \cap P_2)\\
+	&\Leftrightarrow& \exists(x \in A)(f(x) = yかつx \in P_1 かつ x \in P_2)\\
+	&\Leftrightarrow& y \in f(P_1) かつ y \in f(P_2)\\
+	&\Leftrightarrow& y \in f(P_1) \cap f(P_2)
+\end{eqnarray*}
+(4.2)' $x \in A$について
+\begin{eqnarray*}
+	x \in f^{-1}(Q_1 \cup Q_2)
+	&\Leftrightarrow& f(x) \in (Q_1 \cup Q_2)\\
+	&\Leftrightarrow& f(x) \in Q_1 または f(x) \in Q_2\\
+	&\Leftrightarrow& x \in f^{-1}(Q_1) または f^{-1}(Q_2)\\
+	&\Leftrightarrow& x \in f^{-1}(Q_1) \cup f^{-1}(Q_2)
+\end{eqnarray*}
+
+\subsection{} % subsection2
+任意の$x \in P$について$f(x) \in f(P)$だから, $x \in f^{-1}(f(P))$. よって$f^{-1}(f(P)) \subset P$.\\
+等号は$A = \{0, 1\}$, $B = \{0\}$, $f(0) = f(1) = 0$, $P = \{0\}$の場合に成立しない.
+
+\subsection{} % subsection3
+$f$が単射と仮定する. $x \in f^{-1}(f(P))$とすると, $f(x) \in f(P)$. ゆえに$x' \in P$が存在して$f(x') = f(x)$だが, 単射より$x = x'$. よって$x \in P$なので$f^{-1}(f(P)) \subset P$. (4.5)と合わせて$f^{-1}(f(P)) = P$が得られる.
+
+$f$が全射と仮定する. $y \in Q$とすると, 全射より$x \in f^{-1}(Q)$が存在して$f(x) = y$. $y = f(x) \in f(f^{-1}(Q))$であるから$Q \subset f(f^{-1}(Q))$. (4.5)'と合わせて$Q = f(f^{-1}(Q))$が得られる.
+
+\subsection{} % subsection4
+$y \in f(P_1) \cap f(P_2)$とすると$x_1 \in P_1$及び$x_2 \cap P_2$が存在して$f(x_1) = f(x_2) = y$. 単射より$x_1 = x_2$であるから$x_1 \in P_2$より$x_1 \in P_1 \cap P_2$. よって$y = f(x_1) \in f(P_1 \cap P_2)$なので$f(P_1 \cap P_2) \supset f(P_1) \cap f(P_2)$. (4.3)と合わせて$f(P_1 \cap P_2) = f(P_1) \cap f(P_2)$.
+
+\subsection{} % subsection5
+\noindent
+(a) $y \in f(A) - f(P)$とすると, $x \in A$が存在して$f(x) = y$であるが$x \neq P$となる. すなわち$x \in A - P$であるから$y = f(x) \in f(P - A)$. よって$f(A) - f(P) \subset f(A - P)$.\\
+(b) $A = \{0, 1\}$, $P = \{0\}$, $f(0) = f(1) = 0$の場合に成立しない.\\
+(c) 任意の$y \in f(A - P)$について$x \in A - P$が存在して$f(x) = y$. $x \in A$だから$y = f(x) \in f(A)$. また$y \in f(P)$と仮定すると, $x' \in P$が存在して$f(x') = y$が成り立つので, 単射より$x' = x$であるから$x' \notin P$となり矛盾. ゆえに$y \notin f(P)$であるから$y \in f(A) - f(P)$. よって$f(A - P) \subset f(A) - f(P)$であるから, (4.4)と合わせて$f(A - P) = f(A) - f(P)$を得る.
+
+\subsection{} % subsection6
+任意の$x \in A$について
+\begin{eqnarray*}
+	x \in f^{-1}(B - Q)
+	&\Leftrightarrow& f(x) \in B - Q\\
+	&\Leftrightarrow& f(x) \notin Q\\
+	&\Leftrightarrow& x \notin f^{-1}(Q)\\
+	&\Leftrightarrow& x \in A - f^{-1}(Q)
+\end{eqnarray*}
+よって$f^{-1}(B - Q) = A - f^{-1}(Q)$.
+
+\subsection{} % subsection7
+\noindent
+(2)\\
+任意の$x \in A$について$(f \circ I_A)(x) = f(I_A(x)) = f(x)$. よって$f \circ I_A = f$.\\
+任意の$x \in A$について$(I_B \circ f)(x) = I_B(f(x)) = f(x)$. よって$I_B \circ f = f$.\\
+(3)\\
+任意の$x \in A$について$(f^{-1} \circ f)(x) = f^{-1}(f(x)) = x$. よって$f^{-1} \circ f = I_A$.\\
+$f = (f^{-1})^{-1}$であるから$f^{-1}$について上で証明したことを用いて$f \circ f^{-1} = I_B$.
+
+\subsection{} % subsection8
+任意の$z \in C$について$(g \circ f)((f^{-1} \circ g^{-1})(z)) = (g \circ f \circ f^{-1} \circ g^{-1})(z) = z$. よって$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$.
+
+\subsection{} % subsection9
+\noindent
+(a) 任意の$z \in C$について
+\begin{eqnarray*}
+	z \in (g \circ f)(P)
+	&\Leftrightarrow& x \in Pが存在して(g \circ f)(x) = z\\
+	&\Leftrightarrow& x \in Pが存在してg(f(x)) = z\\
+	&\Leftrightarrow& y \in f(P)が存在してg(y) = z\\
+	&\Leftrightarrow& z \in g(f(P))
+\end{eqnarray*}
+よって $(g \circ f)(P) = g(f(P))$.\\
+(b) 任意の$x \in A$について
+\begin{eqnarray*}
+	x \in (g \circ f)^{-1}(R)
+	&\Leftrightarrow& (g \circ f)(x) \in R\\
+	&\Leftrightarrow& g(f(x)) \in R\\
+	&\Leftrightarrow& f(x) \in g^{-1}(R)\\
+	&\Leftrightarrow& x \in f^{-1}(g^{-1}(R))
+\end{eqnarray*}
+
+\subsection{} % subsection10
+\noindent
+(a) 任意の$z \in C$について$g \circ f$の全射性より$x \in A$が存在して$(g \circ f)(x) = z$. $f(x) \in B$が$g(f(x)) = z$を満たすから$g$は全射.\\
+(b) $x, x' \in B$が$f(x) = f(x')$を満たすと仮定すると$g(f(x)) = g(f(x'))$. ゆえに$(g \circ f)(x) = (g \circ f)(x')$なので$g \circ f$の単射性より$x = x'$. すなわち$f$は単射.
+
+\subsection{} % subsection11
+\noindent
+任意の$y \in B$について$x \in A$が存在して$f(x) = y$が成立する. $g \circ f = g' \circ f$より$(g \circ f)(x) = (g' \circ f)(x)$なので$g(f(x)) = g'(f(x))$. よって$g(y) = g'(y)$なので$g = g'$.
+
+\subsection{} % subsection12
+任意の$x, x' \in A$について$g \circ f = g \circ f'$より$(g \circ f)(x) = (g \circ f')(x')$なので$g(f(x)) = g(f'(x))$. gの単射性より$f(x) = f'(x)$なので$f = f'$.
+
+\subsection{} % subsection13
+\noindent
+(a) 任意の$y \in B$について$g \circ f$の全射性により$x \in A$が存在して$g(y) = (g \circ f)(x)$. すなわち$g(y) = g(f(x))$であるが$g$の単射性より$y = f(x)$. よってfは全射.\\
+(b) $y, y' \in B$について$g(y) = g(y')$とする. $f$の全射性により$x, x' \in A$が存在して$f(x) = y$, $f(x') = y'$. $(g \circ f)(x) = f(y) = f(y') = (g \circ f)(x')$であるから$g \circ f$の単射性により$x = x'$. よって$y = f(x) = f(x') = y'$であるから$g$は単射.
+
+\subsection{} % subsection14
+\noindent
+$g = g \circ I_B = g \circ f \circ g' = I_A \circ g' = g'$より一つ目の等号が示される.\\
+$g' = I_A \circ g' = f^{-1} \circ f \circ g' = f^{-1} \circ I_B = f^{-1}$より二つ目の等号が示される.\\
+
+\subsection{} % subsection15
+\begin{eqnarray*}
+	\forall{x \in X}(\chi_A(x) \leq \chi_B(x))
+	&\Leftrightarrow& \forall{x \in X}(\chi_A(x) = 0 または (\chi_A(x) = 1 かつ \chi_B(x) = 1))\\
+	&\Leftrightarrow& \forall{x \in X}(\chi_A(x) \neq 1 または (\chi_A(x) = 1 かつ \chi_B(x) = 1))\\
+	&\Leftrightarrow& \forall{x \in X}(\chi_A(x) = 1 ならば (\chi_A(x) = 1 かつ \chi_B(x) = 1))\\
+	&\Leftrightarrow& \forall{x \in X}(\chi_A(x) = 1 ならば \chi_B(x) = 1)\\
+	&\Leftrightarrow& \forall{x \in X}(x \in A ならば x \in B)\\
+	&\Leftrightarrow&  A \subset B
+\end{eqnarray*}
+任意に$x \in X$をとっておく.\\
+(a)
+\begin{eqnarray*}
+	\chi_{A \cap B}(x) = 1
+	&\Leftrightarrow& x \in A \cap B\\
+	&\Leftrightarrow& x \in A かつ x \in B\\
+	&\Leftrightarrow& \chi_A(x) = 1 かつ \chi_B(x) = 1\\
+	&\Leftrightarrow& \chi_A(x)\chi_B(x) = 1
+\end{eqnarray*}
+両辺は必ず$0$または$1$なので対偶をとると$\chi_{A \cap B}(x) = 0 \Leftrightarrow \chi_A(x)\chi_B(x) = 0$も分かるから題意は示された.\\
+(b)\\
+$x \in A$ならば、$x \in B \Leftrightarrow x \in A \cap B$なので
+\begin{equation*}
+	\chi_{A \cup B}(x) = 1 = \chi_A(x) + \chi_B(x) - \chi_B(x) = \chi_A(x) + \chi_B(x) - \chi_{A \cap B}(x)
+\end{equation*}
+$x \notin A$ならば、$x \in B \Leftrightarrow x \in A \cup B$なので
+\begin{equation*}
+	\chi_A{A \cup B}(x) = 0 + \chi_B(x) + 0 = \chi_A(x) + \chi_B(x) + \chi_{A \cap B}(x)
+\end{equation*}
+よって題意は示された.\\
+(c)\\
+\begin{equation*}
+	\chi_{A^c}(x) = 1 \Leftrightarrow x \in A^c \Leftrightarrow x \notin A \Leftrightarrow 1 - \chi_A(x) = 1
+\end{equation*}
+両辺は必ず$0$または$1$なので対偶をとると$\chi_{A^c}(x) = 0 \Leftrightarrow 1 - \chi_A(x) = 0$も分かるから題意は示された.\\
+(d)\\
+\begin{equation*}
+	\chi_{A - B}(x) = \chi_{A \cap B^c}(x) = \chi_A(x)\chi_{B^c}(x) = \chi_A(x)(1 - chi_B(x))
+\end{equation*}
+(e)\\
+\begin{eqnarray*}
+	\chi_{A \triangle B}(x) = 1
+	&\Leftrightarrow& (x \in A かつ x \in B^c) または (x \in A^c かつ x \in B)\\
+	&\Leftrightarrow& (x \in A かつ x \notin B) または (x \notin A かつ x \in B)\\
+	&\Leftrightarrow& (\chi_A(x) = 1 かつ \chi_B(x) = 0) または (\chi_A(x) = 0 かつ \chi_B(x) = 1)\\
+	&\Leftrightarrow& |\chi_A(x) - \chi_B(x)| = 1
+\end{eqnarray*}
+両辺は必ず$0$または$1$なので対偶をとると$\chi_{A \triangle B}(x) = 0 \Leftrightarrow |\chi_A(x) - \chi_B(x)| = 0$も分かるから題意は示された.\\
+
+\subsection{} % subsection16
+$A$の各元を$\{1_A, 2_A, \cdots, m_A\}$, $B$の各元を$\{1_B, 2_B, \cdots, n_B\}$と呼ぶことにする. 有限集合$S$の元の個数を$N(S)$と書くこととする.
+
+$A$から$B$への単射$f$が存在すると仮定する. $1 \leq i < j \leq m$ならば単射性より$f(i_A) \neq f(j_A)$. ゆえにBは異なる$n$個の元$f(1_A), f(2_A), \cdots, f(m_A)$を持つので$m \leq n$が成り立つ.\\
+$m \leq n$と仮定すれば単射$f(i_A) = i_B (1 \leq i \leq m)$が存在する.\\
+よって$A$から$B$への単射が存在することと$m \leq n$は同値.
+
+$A$から$B$への全射$f$が存在すると仮定する. 全射より$1 \leq i \leq n$を満たす任意の$i$について$f^{-1}(i_B)$は空でないから$g(i_B) = (f^{-1}(i_B)のうち添え字最小のもの)$として$A$から$B$への単射$g$が定義できる. よって$m \geq n$.\\
+$m \geq n$と仮定すると全射\\
+\begin{equation*}
+	f(i_A) =
+	\begin{cases}
+		i_B & (1 \leq i \leq n)\\
+		1 & (n + 1 \leq i \leq m)
+	\end{cases}
+\end{equation*}
+が定義できる.
+
+$f:A \rightarrow B$とする.\\
+$f$が全射でないと仮定する. このとき$f(A)$は$B$の真部分集合であり$f(A)$は$B$よりも元の個数が少ないので, $f(A)$は$A$よりも元の個数が少ない. ゆえに$f$の値域を$f(A)$に変えた写像は単射でないので$f$は単射でない.\\
+$f$が単射でないと仮定すると$x_1, x_2 \in A$, $y_0 \in B$が存在して, $x_1 \neq x_2$かつ$f(x_1) = f(x_2) = y_0$が成り立つ. 任意の$y \in f(A)$について$f^{-1}(y) - {x_1}$は空でないので$g(y) = (f^{-1}(y)の最小値)$として単射$g:f(A) \rightarrow A$が定義できるので$A - {x_1}$の元の個数は$f(A)$の元の個数以上である. ゆえに$A$及び$B$は$f(A)$よりも多くの元を持つので$f$は全射でない.\\
+よって対偶をとれば全射と単射の概念が一致することが分かる. このことから全射ならば全単射であることも分かる. また全単射ならば全射であることは定義より明らか.
+
+\subsection{} % subsection17
+求める個数は$A$の要素を$B$の要素に重複なく割り当てる割り当て方の個数である. $A = \{1, \cdots, m\}$と番号をふっておく. 初めに$1 \in A$には$B$の要素のどれを割り当ててもいいから, $\{1\}$に対する$B$の要素の割り当て方は$m$通り. $\{1, \cdots, i\} (1 \leq i < m)$までの割り当ての場合の数が$n(n - 1)\cdots(n - i + 1)$だと仮定すると, $i + 1$の割り当て方は$B$のうち$\{1, \cdots, i\}$に割り当てられていない$(n - i))$通りなので$\{1, \cdots, i + 1\}$の割り当て方は$n(n - 1)\cdots(n - (i + 1) + 1)$通り. よって帰納的に$A = \{1, \cdots, m\}$の割り当て方は$n(n - 1)\cdots(n - m + 1)$通りであることが分かる.
+
+\subsection{} % subsection18
+$B$の部分集合は$B$の部分集合から$B$への標準単射と一対一対応しているのでこれを数え上げればよい. 求める数をsとする. 前問の記号を用いると$(n)_m$は$m$個の元から成る集合から$B$の$m$個の元から成る部分集合への写像とその部分集合から$B$への標準単射の合成の個数なので$(n)_m = s \times (m)_m$. よって$s = \dfrac{(n)_m}{m!}$.
+
+等式
+\begin{equation*}
+	\sum_{i = 0}^n\dbinom{n}{i} = 2^n
+\end{equation*}
+は左辺が$n$個の元から成る集合の$1 \leq i \leq n$を満たす各$i$に対する$i$個の元から成る部分集合の個数の総和であり, 左辺は$n$個の元から成る集合の部分集合の個数なので等号は成り立つ.
+
+等式
+\begin{equation*}
+	\sum_{i = 0}^n(-1)^i\dbinom{n}{i} = 0
+\end{equation*}
+は$n$個の元から成る集合の部分集合のうち偶数個の元からなるものの個数の総和と奇数個の元からなるものの個数の総和が等しいことを意味する. $S$を$n$個の元からなる集合, 偶数個, 奇数個の元からなる$S$の部分集合の全体をそれぞれ$A$, $B$を書くこととし, $A$と$B$の元の個数が等しいことを示す.\\
+$n$が奇数であれば, $A$の元の補集合は$B$の元であり, これは$A$と$B$の間の一対一の対応なので, $A$と$B$の元の個数は等しい.\\
+$n$が正の偶数であるとき, $x \in S$を一つとっておく. $A$, $B$の元のうち$x$を含むものの全体をそれぞれ$A_x$,$B_x$とする. これらはそれぞれ$S - {x}$の部分集合のうち奇数個, 偶数個の元からなるものの全体をと一致するが, $S - {x}$は奇数個の元からなるので上で示したことより, $A_x$と$B_x$の元の個数は等しいことが分かる. 同様にして$A$, $B$の元のうち$x$を含まないものの全体も元の個数が等しいことが分かる. よって$n > 0$ならば$A$と$B$の元の個数は等しい. \\
+\footnotesize
+\ (注) $n = 0$のときは左辺が$1$であるため等式は成り立たない.
+\normalsize
+
+\subsection{} % subsection19
+$A$, $B$をそれぞれ$m$, $n$個の元からなる集合とし, $\mathscr{F}$を$A$から$B$への写像の全体とする.\\
+(a) 左辺は$\mathscr{F}$の個数を意味する. $\mathscr{F}$のうち像が$k$個の元からなるものの全体を$\mathscr{F}_k$とする. $k$個の元からなる$B$の部分集合$B_k$を一つ固定とすると, $\mathscr{F}_k$のうち像が$B_k$であるものは$A$から$B_k$への全射とみなせるので$S(m, k)$個存在する. 逆に$\mathscr{F}_k$の各元の像は$k$個の元からなる$B$の部分集合なので, $\mathscr{F}_k$の元の個数は$k$個の元からなる$B$の部分集合の個数$\dbinom{n}{k}$と$S(m, k)$の積, すなわち証明すべき等式の右辺の各項で表される.\\
+(b) $n = 0$ならば$S(m, n) = (-1)^0\dbinom{n}{0}0^m = 0$より等式は成り立つ. $n > 0$のとき, $0 \leq i \leq n - 1$で等式が成り立つと仮定する.
+\begin{eqnarray*}
+	S(m, n)
+	&=& n^m - \sum_{k = 1}^{n - 1}\dbinom{n}{k}S(m, k)\\
+	&=& n^m\binom{n}{k}(-1)^{n - n} - \sum_{k = 1}^{n - 1}\dbinom{n}{k}\sum_{l = 0}^{k}(-1)^{k - l}\dbinom{k}{l}l^m\\
+	&=& n^m\binom{n}{k}(-1)^{n - n} - \sum_{k = 0}^{n - 1}\sum_{l = 0}^{k}(-1)^{k - l}\dbinom{n}{k}\dbinom{k}{l}l^m\\
+	&=& n^m\binom{n}{k}(-1)^{n - n} - \sum_{l = 0}^{n - 1}\sum_{k = l}^{n - 1}(-1)^{k - l}\dbinom{n}{k}\dbinom{k}{l}l^m\\
+	&=& n^m\binom{n}{k}(-1)^{n - n} - \sum_{l = 0}^{n - 1}\sum_{k = l}^{n - 1}(-1)^{k - l}\dfrac{n!}{(n - k)!(k - l)!l!}l^m\\
+	&=& n^m\binom{n}{k}(-1)^{n - n} - \sum_{l = 0}^{n - 1}\sum_{k = l}^{n - 1}(-1)^{k - l}\dbinom{n}{l}\dbinom{n - l}{k - l}l^m\\
+	&=& n^m\binom{n}{k}(-1)^{n - n} - \sum_{l = 0}^{n - 1}l^m\dbinom{n}{l}\sum_{k = 0}^{n - l - 1}(-1)^{k}\dbinom{n - l}{k}\\
+	&=& n^m\binom{n}{k}(-1)^{n - n} - \sum_{l = 0}^{n - 1}l^m\dbinom{n}{l}(-(-1)^{n - l})\\
+	&=& n^m\binom{n}{k}(-1)^{n - n} + \sum_{l = 0}^{n - 1}l^m\dbinom{n}{l}(-1)^{n - l}\\
+	&=& n^m\binom{n}{k}(-1)^{n - n} + \sum_{l = 0}^{n - 1}l^m\dbinom{n}{l}(-1)^{n - l}\\
+	&=& \sum_{l = 0}^{n}l^m\dbinom{n}{l}(-1)^{n - l}
+\end{eqnarray*}
+よって帰納法により示された.
+
+
+\section{添数づけられた族, 一般の直積}	% section3
+\subsection{} % subsection1
+\noindent
+$\bigcup_{n = 1}^{\infty}A_n = [0, 1]$\\
+$\bigcap_{n = 1}^{\infty}A_n = \{0\}$\\
+$\bigcup_{n = 1}^{\infty}B_n = (0, 1]$\\
+$\bigcap_{n = 1}^{\infty}B_n = \phi$\\
+$\bigcup_{n = 1}^{\infty}C_n = (0, \infty)$\\
+$\bigcap_{n = 1}^{\infty}C_n = [0, 1)$
+
+\subsection{} % subsection2
+\noindent
+(5.1) 任意の$x$について
+\begin{eqnarray*}
+	x \in (\bigcup_{\lambda \in \Lambda}A_\lambda) \cap B
+	&\Leftrightarrow& x \in \bigcup_{\lambda \in \Lambda}A_\lambda かつ x \in B\\
+	&\Leftrightarrow& \exists \lambda \in \Lambda (x \in A_\lambda) かつ x \in B\\
+	&\Leftrightarrow& \exists \lambda \in \Lambda(x \in A_\lambda \cap B)\\
+	&\Leftrightarrow& x \in \bigcup_{\lambda \in \Lambda}(A_\lambda \cap B)
+\end{eqnarray*}
+なので$(\bigcup_{\lambda \in \Lambda}A_\lambda) \cap B = \bigcup_{\lambda \in \Lambda}(A_\lambda \cap B)$.\\
+(5.1)' 任意の$x$について
+\begin{eqnarray*}
+	x \in \left(\bigcap_{\lambda \in \Lambda}A_\lambda\right) \cup B
+	&\Leftrightarrow& x \in \bigcap_{\lambda \in \Lambda}A_\lambda または x \in B\\
+	&\Leftrightarrow& \forall{\lambda \in \Lambda}(x \in A_\lambda) または x \in B\\
+	&\Leftrightarrow& \forall{\lambda \in \Lambda}(x \in A_\lambda \cup B)\\
+	&\Leftrightarrow& x \in \bigcap_{\lambda \in \Lambda}(A_\lambda \cup B)
+\end{eqnarray*}
+なので$(\bigcap_{\lambda \in \Lambda}A_\lambda) \cup B = \bigcap_{\lambda \in \Lambda}(A_\lambda \cup B)$.
+
+\subsection{} % subsection3
+\noindent
+(5.2) 任意の$x \in X$について
+\begin{eqnarray*}
+	x \in \left(\bigcup_{\lambda \in \Lambda}A_\lambda\right)^c
+	&\Leftrightarrow& x \in \bigcup_{\lambda \in \Lambda}A_\lambda でない\\
+	&\Leftrightarrow& \exists{\lambda \in \Lambda}(x \in A_\lambda)でない\\
+	&\Leftrightarrow& \forall{\lambda \in \Lambda}(x \notin A_\lambda)\\
+	&\Leftrightarrow& \forall{\lambda \in \Lambda}(x \in A^c_\lambda)\\
+	&\Leftrightarrow& x \in \left(\bigcup_{\lambda \in \Lambda}A_\lambda^c\right)
+\end{eqnarray*}
+なので$\left(\bigcup_{\lambda \in \Lambda}A_\lambda\right)^c = x \in \left(\bigcup_{\lambda \in \Lambda}A_\lambda^c\right)$.\\
+(5.2)' 任意の$x \in X$について
+\begin{eqnarray*}
+	x \in \left(\bigcap_{\lambda \in \Lambda}A_\lambda\right)^c
+	&\Leftrightarrow& x \in \bigcap_{\lambda \in \Lambda}A_\lambda でない\\
+	&\Leftrightarrow& \forall{\lambda \in \Lambda}(x \in A_\lambda)でない\\
+	&\Leftrightarrow& \exists{\lambda \in \Lambda}(x \notin A_\lambda)\\
+	&\Leftrightarrow& \forall{\lambda \in \Lambda}(x \in A^c_\lambda)\\
+	&\Leftrightarrow& x \in \left(\bigcap_{\lambda \in \Lambda}A_\lambda^c\right)
+\end{eqnarray*}
+なので$\left(\bigcap_{\lambda \in \Lambda}A_\lambda\right)^c = \left(\bigcap_{\lambda \in \Lambda}A_\lambda^c\right)$.
+
+\subsection{} % subsection4
+\noindent
+(5.3) 任意の$y \in B$について
+\begin{eqnarray*}
+	y \in f\left(\bigcup_{\lambda \in \Lambda}P_\lambda\right)
+	&\Leftrightarrow& \exists{x \in A}(x \in \bigcup_{\lambda \in \Lambda}P_\lambda かつ f(x) = y)\\
+	&\Leftrightarrow& \exists{x \in A}(\exists{\lambda \in \Lambda}(x \in P_\lambda) かつ f(x) = y)\\
+	&\Leftrightarrow& \exists{\lambda \in \Lambda}\exists{x \in A}(x \in P_\lambda かつ f(x) = y)\\
+	&\Leftrightarrow& \exists{\lambda \in \Lambda}(y \in f(P_\lambda))\\
+	&\Leftrightarrow& y \in \bigcup_{\lambda \in \Lambda}f(P_\lambda)
+\end{eqnarray*}
+なので$f\left(\bigcup_{\lambda \in \Lambda}P_\lambda\right) = \bigcup_{\lambda \in \Lambda}f(P_\lambda)$.\\
+(5.4) 任意の$y \in B$について
+\begin{eqnarray*}
+	y \in f\left(\bigcap_{\lambda \in \Lambda}P_\lambda\right)
+	&\Leftrightarrow& \exists{x \in A}(x \in \bigcap_{\lambda \in \Lambda}P_\lambda かつ f(x) = y)\\
+	&\Leftrightarrow& \exists{x \in A}(\forall{\lambda \in \Lambda}(x \in P_\lambda) かつ f(x) = y)\\
+	&\Rightarrow& \forall{\lambda \in \Lambda}\exists{x \in A}(x \in P_\lambda かつ f(x) = y)\\
+	&\Leftrightarrow& \forall{\lambda \in \Lambda}(y \in f(P_\lambda))\\
+	&\Leftrightarrow& y \in \bigcap_{\lambda \in \Lambda}f(P_\lambda)
+\end{eqnarray*}
+なので$f\left(\bigcap_{\lambda \in \Lambda}P_\lambda\right) \subset \bigcap_{\lambda \in \Lambda}f(P_\lambda)$.\\
+(5.3)' 任意の$x \in A$について
+\begin{eqnarray*}
+	x \in f^{-1}\left(\bigcup_{\lambda \in \Lambda}Q_\lambda\right)
+	&\Leftrightarrow& f(x) \in \bigcup_{\lambda \in \Lambda}Q_\lambda\\
+	&\Leftrightarrow& \exists{\lambda \in \Lambda}(f(x) \in Q_\lambda)\\
+	&\Leftrightarrow& \exists{\lambda \in \Lambda}(x \in f^{-1}(Q_\lambda))\\
+	&\Leftrightarrow& x \in \bigcup_{\lambda \in \Lambda}f^{-1}(Q_\lambda)
+\end{eqnarray*}
+なので$f^{-1}\left(\bigcup_{\lambda \in \Lambda}Q_\lambda\right) = \bigcup_{\lambda \in \Lambda}f^{-1}(Q_\lambda)$.\\
+(5.4)' 任意の$x \in A$について
+\begin{eqnarray*}
+	x \in f^{-1}\left(\bigcap_{\lambda \in \Lambda}Q_\lambda\right)
+	&\Leftrightarrow& f(x) \in \bigcap_{\lambda \in \Lambda}Q_\lambda\\
+	&\Leftrightarrow& \forall{\lambda \in \Lambda}(f(x) \in Q_\lambda)\\
+	&\Leftrightarrow& \forall{\lambda \in \Lambda}(x \in f^{-1}(Q_\lambda))\\
+	&\Leftrightarrow& x \in \bigcap_{\lambda \in \Lambda}f^{-1}(Q_\lambda)
+\end{eqnarray*}
+なので$f^{-1}\left(\bigcap_{\lambda \in \Lambda}Q_\lambda\right) = \bigcap_{\lambda \in \Lambda}f^{-1}(Q_\lambda)$.
+
+\subsection{} % subsection5
+\noindent
+(a) 任意の$x$について
+\begin{eqnarray*}
+	x \in \left(\bigcup_{\lambda \in \Lambda}A_\lambda\right) \cap \left(\bigcup_{\mu \in M}B_\mu\right)
+	&\Leftrightarrow& x \in \bigcup_{\lambda \in \Lambda}A_\lambda かつ x \in \bigcup_{\mu \in M}B_\mu\\
+	&\Leftrightarrow& \exists{\lambda \in \Lambda}(x \in A_\lambda) かつ \exists{\mu \in M}(x \in B_\mu)\\
+	&\Leftrightarrow& \exists{\lambda \in \Lambda}\exists{\mu \in M}(x \in A_\lambda かつ x \in B_\mu)\\
+	&\Leftrightarrow& \exists{(\lambda, \mu) \in \Lambda \times M}(x \in A_\lambda \cap B_\mu)\\
+	&\Leftrightarrow& x \in \bigcup_{(\lambda, \mu) \in \Lambda \times M}(A_\lambda \cap B_\mu)
+\end{eqnarray*}
+(b) 任意の$x$について
+\begin{eqnarray*}
+	x \in \left(\bigcap_{\lambda \in \Lambda}A_\lambda\right) \cup \left(\bigcap_{\mu \in M}B_\mu\right)
+	&\Leftrightarrow& x \in \bigcap_{\lambda \in \Lambda}A_\lambda または x \in \bigcap_{\mu \in M}B_\mu\\
+	&\Leftrightarrow& \forall{\lambda \in \Lambda}(x \in A_\lambda) または \forall{\mu \in M}(x \in B_\mu)\\
+	&\Leftrightarrow& \forall{\lambda \in \Lambda}\forall{\mu \in M}(x \in A_\lambda または x \in B_\mu)\\
+	&\Leftrightarrow& \forall{(\lambda, \mu) \in \Lambda \times M}(x \in A_\lambda \cup B_\mu)\\
+	&\Leftrightarrow& x \in \bigcap_{(\lambda, \mu) \in \Lambda \times M}(A_\lambda \cup B_\mu)
+\end{eqnarray*}
+(c) 任意の$(x, y)$について
+\begin{eqnarray*}
+	(x, y) \in \left(\bigcup_{\lambda \in \Lambda}A_\lambda\right) \times \left(\bigcup_{\mu \in M}B_\mu\right)
+	&\Leftrightarrow& x \in \bigcup_{\lambda \in \Lambda}A_\lambda かつ y \in \bigcup_{\mu \in M}B_\mu\\
+	&\Leftrightarrow& \exists{\lambda \in \Lambda}(x \in A_\lambda) かつ \exists{\mu \in M}(y \in B_\mu)\\
+	&\Leftrightarrow& \exists{\lambda \in \Lambda}\exists{\mu \in M}(x \in A_\lambda かつ y \in B_\mu)\\
+	&\Leftrightarrow& \exists{(\lambda, \mu) \in \Lambda \times M}((x, y) \in A_\lambda \times B_\mu)\\
+	&\Leftrightarrow& x \in \bigcup_{(\lambda, \mu) \in \Lambda \times M}(A_\lambda \times B_\mu)
+\end{eqnarray*}
+(d) 任意の$(x, y)$について
+\begin{eqnarray*}
+	(x, y) \in \left(\bigcap_{\lambda \in \Lambda}A_\lambda\right) \times \left(\bigcap_{\mu \in M}B_\mu\right)
+	&\Leftrightarrow& x \in \bigcap_{\lambda \in \Lambda}A_\lambda かつ y \in \bigcap_{\mu \in M}B_\mu\\
+	&\Leftrightarrow& \forall{\lambda \in \Lambda}(x \in A_\lambda) かつ \forall{\mu \in M}(y \in B_\mu)\\
+	&\Leftrightarrow& \forall{\lambda \in \Lambda}\forall{\mu \in M}(x \in A_\lambda かつ y \in B_\mu)\\
+	&\Leftrightarrow& \forall{(\lambda, \mu) \in \Lambda \times M}((x, y) \in A_\lambda \times B_\mu)\\
+	&\Leftrightarrow& x \in \bigcap_{(\lambda, \mu) \in \Lambda \times M}(A_\lambda \times B_\mu)
+\end{eqnarray*}
+
+\subsection{} % subsection6
+任意の$x \in \bigcup_{\lambda \in \Lambda}A_\lambda$に対して$\lambda_x \in \Lambda$が一意に存在するので, 写像$\phi:A \rightarrow \Lambda$を$\phi(x) = \lambda_x$と定義する. 写像$f:A \rightarrow B$を$f_0(x) = f_{\phi(x)}(x)$と定義する. このとき, $f_0$は明らかにすべての$f_\lambda$の拡大である. 一方$f$がすべての$f_\lambda$の拡大であるとすると, 任意の$x \in A$について$f(x) = f_{\phi(x)}(x) = f_0(x)$なので$f = f_0$.
+
+\subsection{} % subsection7
+任意の$\lambda_0$に対して任意に$x \in A_{\lambda_0}$をとる. 選択公理より$a \in \prod_{\lambda \in \Lambda}A_\lambda$をとれる. $b \in \prod_{\lambda \in \Lambda}A_\lambda$を
+\begin{equation*}
+	b_\lambda = 
+	\begin{cases}
+		x & (\lambda = \lambda_0)\\
+		a_\lambda & (\lambda \neq \lambda_0)\\
+	\end{cases}
+\end{equation*}
+と定義すると, $pr_{\lambda_0}(b)$は$x$なので$pr_{\lambda_0}$は全射である.
+
+\subsection{} % subsection8
+\begin{eqnarray*}
+	\prod_{\lambda \in \Lambda}A_\lambda \subset \prod_{\lambda \in \Lambda}B_\lambda
+	&\Leftrightarrow& \forall{a}(a \in \prod_{\lambda \in \Lambda}A_\lambda ならば a \in \prod_{\lambda \in \Lambda}B_\lambda)\\
+	&\Leftrightarrow& \forall{a}(\forall{\lambda_1 \in \Lambda}(a_{\lambda_1} \in A_{\lambda_1}) ならば \forall{\lambda_2 \in \Lambda}(a_{\lambda_2} \in B_{\lambda_2})) \cdots \phi
+\end{eqnarray*}
+また,
+\begin{eqnarray*}
+	\forall{\lambda \in \Lambda}(A_\lambda \subset B_\lambda)
+	&\Leftrightarrow& \forall{\lambda \in \Lambda}\forall{a}(a \in A_\lambda ならば a \in B_\lambda)\\
+	&\Leftrightarrow& \forall{a}\forall{\lambda \in \Lambda}(a \in A_\lambda ならば a \in B_\lambda) \cdots \varphi
+\end{eqnarray*}
+$\phi ならば \varphi$は明らか. $\varphi$, $\forall{\lambda_1 \in \Lambda}(a_{\lambda_1} \in A_{\lambda_1})$を仮定する. 任意の$\lambda_2 \in \Lambda$に対して, $a_{\lambda_2} \in A_{\lambda_2}$だから$a_{\lambda_2} \in B_{\lambda_2}$. ゆえに$\forall{\lambda_2 \in \Lambda}(a_{\lambda_2} \in B_{\lambda_2})$だから$\phi$が成り立つ.
+
+\subsection{} % subsection9
+前問より$\prod_{\lambda \in \Lambda}A_\lambda \supset \prod_{\lambda \in \Lambda}A_\lambda \cap B_\lambda$かつ$\prod_{\lambda \in \Lambda}B_\lambda \supset \prod_{\lambda \in \Lambda}A_\lambda \cap B_\lambda$なので$\left(\prod_{\lambda \in \Lambda}A_\lambda\right) \cap \left(\prod_{\lambda \in \Lambda}B_\lambda\right) \supset \prod_{\lambda \in \Lambda}\left(A_\lambda \cap B_\lambda\right)$. 逆に任意に$a \in \left(\prod_{\lambda \in \Lambda}A_\lambda\right) \cap \left(\prod_{\lambda \in \Lambda}B_\lambda\right)$をとると, 任意の$\lambda \in \Lambda$について$a_\lambda \in A_\lambda$かつ$a_\lambda \in B_\lambda$より$a_\lambda \in A_\lambda \cap B_\lambda$なので$a \in \prod_{\lambda \in \Lambda}\left(A_\lambda \cap B_\lambda\right)$. ゆえに$\left(\prod_{\lambda \in \Lambda}A_\lambda\right) \cap \left(\prod_{\lambda \in \Lambda}B_\lambda\right) \subset \prod_{\lambda \in \Lambda}\left(A_\lambda \cap B_\lambda\right)$
+
+\subsection{} % subsection10
+\begin{eqnarray*}
+	fが全射
+	&\Leftrightarrow& \forall{b \in \prod_{\lambda \in \Lambda}B_\lambda}\exists{a \in \prod_{\lambda \in \Lambda}A_\lambda}(f(a) = b)\\
+	&\Leftrightarrow& \forall{b \in \prod_{\lambda \in \Lambda}B_\lambda}\exists{a \in \prod_{\lambda \in \Lambda}A_\lambda}\forall{\lambda \in \Lambda}(f_\lambda(a_\lambda) = b_\lambda)\\
+	&\Leftrightarrow& \forall{\lambda \in \Lambda}\forall{b \in \prod_{\lambda \in \Lambda}B_\lambda}\exists{a \in \prod_{\lambda \in \Lambda}A_\lambda}(f_\lambda(a_\lambda) = b_\lambda)\\
+	&\Leftrightarrow& \forall{\lambda \in \Lambda}\forall{b_\lambda \in B_\lambda}\exists{a_\lambda \in A_\lambda}(f_\lambda(a_\lambda) = b_\lambda)
+	\forall{\lambda \in \Lambda}(f_\lambda は全射)
+\end{eqnarray*}
+
+$A = \phi$ならば$fが単射 \Leftrightarrow \forall{\lambda \in \Lambda}f_\lambda が単射$は明らか.\\
+$A \neq \phi$とする. $f$が単射と仮定する. 任意の$\lambda_0 \in \Lambda$に対して, $a_1, a_2 \in A_{\lambda_0}$が$f_{\lambda_0}(a_1) = f_{\lambda_0}(a_2)$であるとする. $x \in \prod_{\lambda \in \Lambda}A_\lambda$をとり, $i = 1, 2$に対し$a'_i \in \prod_{\lambda \in \Lambda}A_\lambda$を
+\begin{equation*}
+	{a'_i}_{\lambda} =
+	\begin{cases}
+		a_i & (\lambda = \lambda_0)\\
+		{x_i}_{\lambda} & (\lambda \neq \lambda_0)
+	\end{cases}
+\end{equation*}
+と定義する. $f(a'_1) = f(a'_2)$だから$f$の単射性より$a'_1 = a'_2$なので$a_1 = a_2$. よって$f_{\lambda_0}$は単射.\\
+逆に$b_1, b_2 \in \prod_{\lambda \in \Lambda}A_\lambda$が$f(b_1) = f(b_2)$であるとすると, 任意の$\lambda \in \Lambda$について$f_\lambda({b_1}_\lambda) = f_\lambda({b_2}_\lambda)$なので単射性より${b_1}_\lambda = {b_2}_\lambda$. すなわち$b_1 = b_2$なので$f$は単射.
+
+\subsection{} % subsection11
+$V(s) \subset V(s')$としても一般性は失われない. 任意に$a \in A$をとる. $V(s) \subset V(s')$より$a' \in A$が存在して$s(a) = s'(a)$が成り立つ. $a = I_A(a) = f(s(a)) = f(s'(a')) = I_A(a') = a'$なので$s(a) = s'(a)$. よって$s = s'$.
+
+\subsection{} % subsection12
+\noindent
+(a)
+\begin{equation*}
+	(f' \circ f) \circ (s \circ s') = f' \circ I_B \circ s' = I_C
+\end{equation*}
+(b)
+\begin{equation*}
+	(r \circ r') \circ (f' \circ f) = r \circ I_B \circ f = I_A
+\end{equation*}
+
+\subsection{} % subsection13
+$h = g \circ f$を満たす$f$が存在すれば, 任意の$c \in V(h)$に対して$a \in A$が存在して$c = h(a)$が成り立つので$c = g(f(a))$より$V(h) \subset V(g)$. 逆に$B \neq \phi$として$V(h) \subset V(g)$と仮定する. 任意の$a \in A$に対して$g^{-1}(h(a)) \neq \phi$であるから, 選択公理により$f(a) \in g^{-1}(h(a))$となるような写像$f$をとれる. このとき任意の$a \in A$に対して$g(f(a)) = h(a)$なので$h = g \circ f$が成り立つ.\\
+\footnotesize
+\ (注) $g$が空写像の場合は必ずしも$f$は存在しない.
+\normalsize
+
+\subsection{} % subsection14
+$h = g \circ f$を満たす$g$が存在すれば, $A$の元$a, a'$について$f(a) = f(a')$ならば$h(a) = g(f(a)) = g(f(a')) = h(a')$. 逆に任意の$a, a' \in A$に対して$f(a) = f(a') \Rightarrow h(a) = h(a')$と仮定する. $C = \phi$ならば$A = B = \phi$なので明らか. $C \neq \phi$ならば$c \in C$がとれる. このとき写像$g$を各$b \in B$に対して, $f^{-1}(b) \neq \phi$ならば$f(a) = b$を満たす$a \in A$に対して$g(b) = h(a)$と定め,  $f^{-1}(b) = \phi$ならば$g(b) = c$と定める. ここで各$b \in B$に対して$f^{-1}(b) \neq \phi$ならば$f(a) = b$を満たす$a$は一般には一意的ではないが, このような$a$のとりかたによらず$g(b)$が一意に定まることを示す. $a, a' \in A$が$b = f(a) = f(a')$ならば仮定より$h(a) = h(a')$であるから$g(b)$の値は$a$のとりかたによらないことが示された. このような$g$について$h = g \circ f$が成り立つことを示す. 任意に$a \in A$をとると$f^{-1}(f(a)) \neq \phi$なので$g(f(a)) = h(a)$であるから$h = g \circ f$.
+
+\subsection{} % subsection15
+(a) $f, f' \in \mathfrak{F}(A, B)$が$\Phi(f) = \Phi(f')$であるとする. すると$v \circ f \circ u = v \circ f' \circ u$が成り立つ. 任意に$a \in A$をとると$u$の全射性より$a' \in A'$が存在して$a = u(a')$が成り立つ. $v(f(u(a'))) = v(f'(u(a')))$なので$v(f(a)) = v(f'(a))$. よって$v$の単射性より$f(a) = f'(a)$なので$f = f'$だから$\Phi$は単射.\\
+(b) $B' = \phi$ならば$B = \phi$より明らか. $B' \neq \phi$ならば$b' \in B'$がとれる. 任意に$f' \in \mathfrak{F}(A', B')$をとる. 任意に$a \in A$をとる. $u$の単射性より$u^{-1}(a) \neq \phi$ならば$u(a') = a$を満たす$a' \in A'$が一意的に定まる. 写像$g:A \rightarrow B'$を各$a \in A$に対して
+\begin{equation*}
+	g(a) =
+	\begin{cases}
+		u(a') = aを満たすようなa' \in A'に対するf'(a') & (u^{-1}(a) \neq \phi)\\
+		b' & (u^{-1}(a) = \phi)
+	\end{cases}
+\end{equation*}
+となるように定める. $v$の全射性より任意の$b' \in B'$に対して$v^{-1}(b') \neq \phi$なので選択公理により写像$h:B' \rightarrow B$が存在して$h(b') \in v^{-1}(b')$が成り立つ. $f = h \circ g$と定義すると$\Phi(f) = f'$であることを示す. 任意に$a' \in A'$をとると$u^{-1}(u(a')) \neq \phi$だから$f(u(a')) = g(f'(a')) \in v^{-1}(f'(a'))$だから$v(f(u(a'))) = f'(a')$なので$f' = v \circ f \circ u$であるから$f' = \Phi(f)$より$\Phi$は全射.
+
+
+\section{同値関係} % section6
+\subsection{} %subsection1
+\noindent
+(a) $\mathbb{Z}$上の$aRb \Leftrightarrow a + b = 0$なる関係$R$.\\
+(b) $\mathbb{Z}$上の関係$\leq$.
+
+\subsection{} %subsection2
+任意の$a \in A$に対して$aRx$となるような$x \in A$をとると, 対称律より$xRa$も成り立つので$aRx$, $xRa$から推移律より$aRa$. すなわち反射律も成り立つから$R$は同値関係である.
+
+\subsection{} %subsection3
+$a, b \in A$に対して$aRb$と仮定する. 反射律より$aRa$. $aRa$, $aRb$及び条件より$bRa$が得られるので, 対称律が成り立つ.\\
+$a, b, c \in A$に対して$aRb$, $bRc$と仮定すると条件より$cRa$が得られるので上で証明した対称律により$aRc$が成り立つため, 推移律が成り立つ.
+
+\subsection{} %subsection4
+$(m, n) \in A$について$mn = mn$なので$(m, n)R(m, n)$であり, 反射律が成り立つ. $(m, n), (m', n') \in A$について$(m, n)R(m', n')$を仮定すると$mn = m'n'$なので$m'n' = mn$より$(m', n')R(m, n)$であり, 対称律が成り立つ. $(m_a, n_a), (m_b, n_b), (m_c, n_c) \in A$について$(m_a, n_a)R(m_b, n_b)$, $(m_b, n_b)R(m_c, n_c)$を仮定すると$m_an_b = m_bn_b = m_cn_c$より$(m_a, n_a)R(m_c, n_c)$なので, 推移律が成り立つ.
+
+\subsection{} %subsection5
+$a \in A$に対して$pr_1^{-1}(a) = \{(a, b) | b \in B\}$なので$A \times B$の各元はそれぞれ$a \in A$がただ一つ存在して$\{(a, b) | b \in B\}$と表される.
+
+\subsection{} %subsection6
+$f = g \circ \varphi$を満たす$g$が存在すれば, $a, a' \in A$が$aRa'$ならば$\varphi(a) = \varphi(a')$なので$f(a) = g(\varphi(a)) = g(\varphi(a')) = f(a')$が成り立つ.\\
+逆に$aRa \Rightarrow f(a) = f(a')$ならば, 各$b \in A/R$に対して$\varphi(a) = b$となるような$a \in A$が存在するので$g(b) = f(a)$とすればよい. このような$a$のとりかたは一般には一意ではないが$f(a)$は$a$のとりかたによらず一意的に定まることを示す. $a, a' \in A$が$b = \varphi(a) = \varphi(a')$であるとすれば$aRa'$なので仮定により$f(a) = f(a')$なので$f(a)$は$a$によらず一意的に定まる.
+
+\end{document}
