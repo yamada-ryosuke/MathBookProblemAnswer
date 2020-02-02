@@ -5,6 +5,89 @@
 
 \begin{document}
 
-hoge
+\section{順序集合} % section1
+\subsection{} % subsection1
+定義より$a \le a$.\\
+$a \le b$かつ$b \le a$を仮定する. $a \le b$より$a < b$または$a = b$であるが, $a < b$ならば$a \not> b$であるから$a \ge b$より結局$a = b$となる.\\
+$a \le b$かつ$b \le c$を仮定する. $a = b$または$b = c$ならば$a \le b$は明らか. $a < b$かつ$b < c$ならば(1.5)より$a < c$が成り立つ.
+
+\subsection{} % subsection2
+\begin{eqnarray*}
+	MがAの最大値
+	&\Leftrightarrow& \forall{x \in A}(x \le M)\\
+	&\Leftrightarrow& (\exists{x \in A}(x \le M でない))でない\\
+	&\Leftrightarrow& (\exists{x \in A}(x > M))でない\\
+	&\Leftrightarrow& MはAの極大
+\end{eqnarray*}
+最小元と極小元の一致は上の証明の双対を考えればよい.
+
+\subsection{} % subsection3
+$\mathfrak{M}$の極小元の全体は$S = \{\{x\} | x \in X\}$であることを示す. $\{x\} \in S$に対して$Y \in \mathfrak{M}$が$Y \le \{x\}$となるならば明らかに$Y = \{x\}$であるから$\{x\}$は極小. 一方$x \in \mathfrak{M} - S$ならば異なる二元$a, b \in x$が存在するので, 例えば${a} < x$であり, $x$は極小でない.
+
+\subsection{} % subsection4
+(i)(ii)を仮定する. (i)より$a$は$M$の上界である. $a$が上限でないと仮定すると$M$の上界$a'$が存在して$a' < a$が成り立つが, (ii)より$x \in M$が存在して$a' < x$を満たし, これは$a'$が上界であることに矛盾する. よって$a$は上限である.\\
+$a$が上限であると仮定する. 上界であることから(i)を満たす. (ii)を満たさないと仮定すると, $a' \in M$が存在して$a' < a$かつ任意の$x \in M$に対して$x \le a'$であるが, これは$a'$が$a$より小さい$M$の上界であることを意味しており矛盾. よって(ii)を満たす.
+
+\subsection{} % subsection5
+$A = \{a_1, \cdots, a_n\}$とすれば, 上限,下限はそれぞれ$max A$, $min A$である.\\
+実際$max\{ \cdots max\{a_1, a_2\}, \cdots \}, a_n \} \cdots \}$は$max A$である. $min A$は双対な証明を考えればよい.
+
+\subsection{} % subsection6
+(1.8) $(A, \le)$上の恒等写像が順序同型写像となる.\\
+(1.9) 仮定より順序同型写像$f:(A, \le) \rightarrow (A', \le')$が存在するので順序同型写像$f^{-1}:(A', \le') \rightarrow (A, \le)$が存在する.\\
+(1.10) 仮定より順序同型写像$f:(A, \le) \rightarrow (A', \le')$, $g:(A', \le') \rightarrow (A'', \le'')$が存在するので順序同型写像$g \circ f:(A', \le') \rightarrow (A, \le)$が存在する.\\
+
+\subsection{} % subsection7
+$x \le y$とすると, $x < y$ならば$f(x) < f(y)$なので$f(x) \le f(y)$であり, $x = y$ならば$f(x) = f(y)$なので$f(x) \le f(y)$であるから, 結局$f(x) \le f(y)$が成り立つ. ゆえに$f$は順序写像である. \\
+$a < b \Rightarrow f(a) <' f(b)$の対偶をとって$f(a) <' f(b)でない \Rightarrow b \le a$が成り立つ. $f(x) \le f(y)$ならば$f(x) >' f(y)$でないので$x \le y$が成り立つ. よって$f$は順序単射である.
+
+\subsection{} % subsection8
+まず開区間$(0, 1)$から$\mathbb{R}$への順序同型写像として$f(x) = tan(\pi x - \frac{\pi}{2})$をとれるので$(0, 1) \simeq \mathbb{R}$. また開区間$(0, 1)$から開区間$(a, b)$への順序同型写像として$g(x) = a + (b - a)x$をとれるので$(0, 1) \simeq (a, b)$. よって$\mathbb{R} \simeq (a, b)$がなりたつ.
+
+\subsection{} % subsection9
+まず$\mathbb{R}$は他の3つと濃度が違うため全単射が存在しないので特に順序同型写像が存在しない.\\
+次に$\mathbb{N}$から$\mathbb{Z}$や$\mathbb{Q}$への順序同型写像$f$が存在すると仮定する. $f(1) - 1 < f(1)$なので$f^{-1}(f(1) - 1) < f(1)$であるが, これは$1$が$\mathbb{N}$の最小値であることに矛盾する.\\
+最後に$\mathbb{Z}$から$\mathbb{Q}$への順序同型写像$f$が存在すると仮定する. $f(0) < (f(0) + f(1)) / 2 < f(1)$なので$0 < f^{-1}(f(0) + f(1) / 2) < 1$であるが, これは明らかに矛盾する.
+
+\subsection{} % subsection10
+任意の$\chi \in C$について, 任意の$x \in X$に対して$\chi(x) \le \chi(x)$なので$\chi \le \chi$.\\
+$\chi, \chi' \in C$に対して$\chi \le \chi'$ならば, 任意の$x \in X$に対して$\chi(x) \le \chi'(x)$かつ$\chi'(x) \le \chi(x)$なので$\chi(x) = \chi'(x)$であり$\chi = \chi'$.\\
+$\chi, \chi', \chi'' \in C$に対して$\chi \le \chi'$かつ$\chi' \le \chi$ならば, 任意の$x \in X$に対して$\chi(x) \le \chi'(x)$かつ$\chi'(x) \le \chi'(x)$なので$\chi(x) \le \chi''(x)$であり$\chi \le \chi''$.
+
+\section{整列集合とその比較定理} % section2
+\subsection{} % subsection1
+$S = \{x | x \in A, a < x\}$とする.
+\begin{eqnarray*}
+	bがaの直後の元
+	&\Leftrightarrow& a < bかつ(a < x < bを満たすx \in Aが存在しない)\\
+	&\Leftrightarrow& b \in Sかつ(x < bを満たすx \in S存在しない)\\
+	&\Leftrightarrow& bはSの極小元
+\end{eqnarray*}
+
+\subsection{} % subsection2
+それぞれ対偶を示す. 
+$A$において降鎖$(a_n)$が存在すると仮定する. このとき集合$S = \{a_n | n \in \mathfrak{N}\}$と定義すると$S$には最小値が存在しない. 実際$a_i$が$S$の最小値と仮定すると$a_{i + 1} < a_i$かつ$a_{i + 1} \in S$であり矛盾する. ゆえに$A$は整列集合ではない.\\
+$A$が整列集合でないと仮定する. このとき$A$の空でない部分集合$T$が存在して, $T$には最小値が存在しない. 写像$F:T \rightarrow \beta{T}$を$F(x) = {y \in T | y < T}$と定義すると, 選択公理により写像$F': T \rightarrow T$が存在して$F'(x) \in F(x)$が成り立つ. このとき降鎖$(a_n)$が次のように構成できる. $T$は空でないから$x \in T$がとれるので$a_0$とし, $n > 0$に対しては$a_n = F'(a_{n - 1})$とする. これは明らかに$T$における降鎖であるから$A$における降鎖でもある.
+
+\subsection{} % subsection3
+$W'$が整列集合であるため比較定理により, $W$と同型な$W'$の切片が存在しないことを証明すればよい. $W$から$W'$の切片$W'<a>$への順序同型写像$f$が存在すると仮定する. これは$W$から$W'$への順序単射とみなせる. $W'$から$W$への包含写像を$g$とするとこれは順序単射である. よって$f \circ g$は$W'$から$W'<a>$への順序単射であるため$(f \circ g)(a) > a$であるがこれは$(f \circ g)(a) \in W'$に反する.
+
+\subsection{} % subsection4
+$n$個の元からなる整列集合を$S$, $T = \{1, \cdots, n\}$とする. $T$の切片の濃度は$|T| - 1 = |S| - 1$以下であるから$S$と順序同型な$T$の切片は存在しない. 同様に$T$と順序同型な$S$の切片は存在しない. よって$S$と$T$は順序同型.\\
+$A$を無限整列集合とする. $a_0 = min A$, $a_{n + 1} = (a_nの直後の元)$として列$(a_n)$を定義し, $S = \{a_n | n \in \mathbb{N}\}$とする. このとき$S = \mathbb{A}$ならば$a_n$を順序同型写像として$S \simeq \mathbb{N}$であり, $S \neq \mathbb{A}$ならば$S = A<sup S>$である.
+
+\subsection{} % subsection5
+双対順序集合が整列集合であることは任意の空でない部分集合は最大値をもつことと同値である. $W$が無限集合であると仮定すると, $W$または$W$の切片は$\mathbb{N}$と順序同型であるが, このような$W$の部分集合に最大値が存在することは$\mathbb{N}$に最大値が存在しないことに矛盾する. よって$W$は有限集合である.
+
+\subsection{} % subsection6
+$f$は全射なので選択公理により$g:W' \rightarrow W$が存在して$g(x) \in f^{-1}(x)$が成り立つ. $f$は順序同型写像なので$x < y \rightarrow g(x) < g(y)$が成り立つ. $W'$が整列集合でないと仮定する. すると$W'$には降鎖が存在するが, その$g$による像は$W$における降鎖となり, $W$が整列集合であることに矛盾する. よって$W'$は整列集合でない.
+
+\subsection{} % subsection7
+$x \in W$の直後の元を$succ(x)$とする. 任意の開区間$(x, succ(x))$は空でないから少なくとも一つの有理数を含む. 選択公理により写像$f:W \rightarrow \mathbb{Q}$を$f(x) \in Q \cap (x, succ(x))$が存在する. 明らかに$f$は単射なので$W$は高々可算である.
+
+\section{Zornの補題, 整列定理} % section3$
+
+\section{順序数} % section4
+\section{Zornの補題の応用} % section5
 
 \end{document}
