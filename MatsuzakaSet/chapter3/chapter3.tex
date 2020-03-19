@@ -67,10 +67,10 @@ $S = \{x | x \in A, a < x\}$とする.
 \subsection{} % subsection2
 それぞれ対偶を示す. 
 $A$において降鎖$(a_n)$が存在すると仮定する. このとき集合$S = \{a_n | n \in \mathfrak{N}\}$と定義すると$S$には最小値が存在しない. 実際$a_i$が$S$の最小値と仮定すると$a_{i + 1} < a_i$かつ$a_{i + 1} \in S$であり矛盾する. ゆえに$A$は整列集合ではない.\\
-$A$が整列集合でないと仮定する. このとき$A$の空でない部分集合$T$が存在して, $T$には最小値が存在しない. 写像$F:T \rightarrow \beta{T}$を$F(x) = {y \in T | y < T}$と定義すると, 選択公理により写像$F': T \rightarrow T$が存在して$F'(x) \in F(x)$が成り立つ. このとき降鎖$(a_n)$が次のように構成できる. $T$は空でないから$x \in T$がとれるので$a_0$とし, $n > 0$に対しては$a_n = F'(a_{n - 1})$とする. これは明らかに$T$における降鎖であるから$A$における降鎖でもある.
+$A$が整列集合でないと仮定する. このとき$A$の空でない部分集合$T$が存在して, $T$には最小値が存在しない. 写像$F:T \rightarrow \mathfrak{P}(T)$を$F(x) = \{y \in T | y < x\}$と定義すると, 選択公理により写像$F': T \rightarrow T$が存在して$F'(x) \in F(x)$が成り立つ. このとき降鎖$(a_n)$が次のように構成できる. $T$は空でないから$x \in T$がとれるので$a_0$とし, $n > 0$に対しては$a_n = F'(a_{n - 1})$とする. これは明らかに$T$における降鎖であるから$A$における降鎖でもある.
 
 \subsection{} % subsection3
-$W'$が整列集合であるため比較定理により, $W$と同型な$W'$の切片が存在しないことを証明すればよい. $W$から$W'$の切片$W'<a>$への順序同型写像$f$が存在すると仮定する. これは$W$から$W'$への順序単射とみなせる. $W'$から$W$への包含写像を$g$とするとこれは順序単射である. よって$f \circ g$は$W'$から$W'<a>$への順序単射であるため$(f \circ g)(a) > a$であるがこれは$(f \circ g)(a) \in W'$に反する.
+$W'$が整列集合であるため比較定理により, $W$と同型な$W'$の切片が存在しないことを証明すればよい. $W$から$W'$の切片$W'\langle a \rangle$への順序同型写像$f$が存在すると仮定する. これは$W$から$W'$への順序単射とみなせる. $W'$から$W$への包含写像を$g$とするとこれは順序単射である. よって$f \circ g$は$W'$から$W'\langle a \rangle$への順序単射であるため$(f \circ g)(a) > a$であるがこれは$(f \circ g)(a) \in W'$に反する.
 
 \subsection{} % subsection4
 $n$個の元からなる整列集合を$S$, $T = \{1, \cdots, n\}$とする. $T$の切片の濃度は$|T| - 1 = |S| - 1$以下であるから$S$と順序同型な$T$の切片は存在しない. 同様に$T$と順序同型な$S$の切片は存在しない. よって$S$と$T$は順序同型.\\
@@ -86,8 +86,94 @@ $f$は全射なので選択公理により$g:W' \rightarrow W$が存在して$g(
 $x \in W$の直後の元を$succ(x)$とする. 任意の開区間$(x, succ(x))$は空でないから少なくとも一つの有理数を含む. 選択公理により写像$f:W \rightarrow \mathbb{Q}$を$f(x) \in Q \cap (x, succ(x))$が存在する. 明らかに$f$は単射なので$W$は高々可算である.
 
 \section{Zornの補題, 整列定理} % section3$
+\subsection{} % subsection1
+Zornの補題$ \rightarrow $(a)\\	
+$m$を$C$を満たす$X$の部分集合とする. $m$を包含し, $C$を満たす$X$の部分集合の全体を$\mathfrak{M}$とする. 示すべきは$\mathfrak{M}$の極大の存在である. $\mathfrak{M}$の任意の全順序部分集合$\mathfrak{N}$をとる. このとき$\mathfrak{N}$の上限$S = \bigcup \mathfrak{N}$は$\mathfrak{M}$の元であること, すなわち$C$を満たすことを示す. $S$の任意の有限部分集合$T$をとると, $T$の各元$t$に対して$t$を含む$\mathfrak{N}$の元をとれるので, そのうち最大のものを$A$とする. $T$は$A$の部分集合なので$C$の有限性より$C$を満たす. よって$S$の任意の部分集合が$C$を満たすことから$C$の有限性より$S$も$C$を満たすことが示された. よって$\mathfrak{M}$はZornの補題の仮定を満たすので極大をもつ. (この証明では最後以外Zornの補題を用いていないことに注意されたい.)
+
+(a) $ \rightarrow $ (b)\\
+順序集合$X$が極大な全順序集合をもつことを示す. $\phi$の任意の2元に対しても$X$の順序関係によって関係を定義するとこれは全順序集合となるので, $X$は少なくとも一つの全順序部分集合をもつ. また, $X$の部分集合$T$が全順序集合であるという条件は$T$の任意の二元が比較可能であることと同値であるから有限的である. よって(a)により$X$は極大な全順序部分集合をもつ.
+
+(b) $ \rightarrow $ (c)\\
+(b)から$A$の極大な全順序部分集合$B$をとれる. $B$の上界$s$をとる. $B$の任意の元と$s$は比較可能なので, $B \cup \{s\}$は全順序集合であるが, $B$は極大な全順序集合なので$s \in B$であるから$s$は$B$の最大値である. また$s$は$A$の極大な元である. 実際$x \ge s$を満たす$x \in A$をとると, $B \cup \{x\}$は全順序集合となるので$B$は極大な全順序集合なので$x \in B$であるから$x = s$である.
+
+(c) $ \rightarrow $ (d)\\
+(d)の仮定は$\mathfrak{M}$が包含関係による順序に関して(c)の仮定を満たすことを意味しているので$\mathfrak{M}$は極大な元を持つ.
+
+(c) $ \rightarrow $ Zornの補題\\
+上限は上界であるから明らか.
+
+(d) $ \rightarrow $ (a)\\
+$C$を満たす$X$の部分集合の全体を$\mathfrak{M}$とする. $\mathfrak{M}$の任意の全順序部分集合$\mathfrak{N}$をとる. Zornの補題$\rightarrow$(a)の証明の中で示した通り, $\mathfrak{N}$の上限は$\mathfrak{M}$の中に存在する. よって(d)の仮定を満たすので(a)は証明された.
+
+\subsection{} % subsection2
+(*)は$\mathfrak{P}(A)$の有限的な性質であることを示す. $\mathfrak{N} \subset \mathfrak{P}(A)$とする. $\mathfrak{N}$が(*)を満たすと仮定する. $\mathfrak{N}$の有限部分集合$\mathfrak{S}$を任意にとる. このとき$\mathfrak{S}$に属する任意の有限個の集合はもちろん$\mathfrak{N}$に属する有限個の集合でもあるから交わるので, $\mathfrak{S}$は(*)を満たす. 逆に$\mathfrak{N}$の任意の有限部分集合が(*)を満たすと仮定する. $\mathfrak{N}$に属する有限個の集合$M_1, \cdots, M_n \in \mathfrak{M}$をとる. $M = \{M_1, \cdots, M_n\}$は$\mathfrak{M}$の有限部分集合なので$M$に属する有限個の集合は交わるが, 特に$M_1, \cdots, M_n$自身も交わる. よって(*)は有限的な条件であるから, 定理6(a)'より(*)を満たす$\mathfrak{P}(A)$の極大な部分集合で, しかも$\mathfrak{M}$を満たすものが存在する. これを$\mathfrak{M}_0$とおく. $\mathfrak{M}_0$が(i)を満たすことは定義から明らかなので(ii)を示す. $N \in \mathfrak{P}(A)$が$\mathfrak{M}_0$の任意の元と交わるとする. このとき$\mathfrak{M}_0 \cup \{N\} \supset \mathfrak{M}_0$であるが$\mathfrak{M}_0$の極大性より$N \in \mathfrak{M}_0$である.
+
+\subsection{} % subsection3
+(i)は$C$の有限的な性質であることを示す. $B$を$\mathbb{R}$の任意の部分集合とする. $B$が(i)を満たすと仮定する. $B$の有限部分集合$B'$を任意にとる. $b_1, \cdots, b_m$を$B'$の相異なる元, $r_1, \cdots, r_m$を0でない有理数とするとき, $r_1 b_1 + \cdots + r_m b_m = 0$ならば, $b_1, \cdots, b_m$は$B$の相異なる元であるから(i)より$r_1 = \cdots = r_m = 0$が成り立つので$B'$は(i)を満たす. 逆に$B$の任意の有限部分集合が(i)を満たすと仮定する. $b_1, \cdots, b_m$を$B$の相異なる元, $r_1, \cdots, r_m$を0でない有理数とするとき, $B' = \{b_1, \cdots, b_m\}$は$B$の有限部分集合であるから(i)を満たすので, $b_1, \cdots, b_m$が$B'$の相異なる元であることから, $r_1 b_1 + \cdots + r_m b_m = 0$ならば$r_1 = \cdots = r_m = 0$が成り立つため, $B$は(i)を満たす.\\
+よってTukeyの補題により(i)を満たす$\mathbb{R}$の極大な部分集合が存在する. これを$B_0$とおく. $B_0$が(ii)を満たすことを示す.\\
+まず存在を背理法によって示す. $B_0$の元の線型結合によって表せない$\mathbb{R}$の元$x$が存在すると仮定する. $B_0' = B_0 \cup \{x\}$とする. $x \in B_0$と仮定すると$x = 1 \cdot x$として$B_0$の元の線型結合により表されてしまい矛盾するので, $x \notin B_0$であり$B_0' \neq B_0$である. また$B_0'$が(i)を満たすことを示す. $b_1, \cdots, b_m$を$B_0'$の相異なる元, $r_1, \cdots, r_m$を0でない有理数とし, $r_1 b_1 + \cdots + r_m b_m = 0$を満たすとする. もし$b_1, \cdots, b_m$に$x$が含まれなければ$B_0$が(i)を満たすことにより$r_1 = \cdots = r_m = 0$が成り立つ. 一方もし$b_1, \cdots, b_m$に$x$が含まれるならば, $b_1 = x$としても一般性は失われない. $r_1 \neq 0$と仮定すると$x = \left(-\dfrac{r_2}{r_1}\right) b_2 + \cdots + \left(-\dfrac{r_m}{r_1}\right) b_m = 0$となり$x$の定義に矛盾するので$r_1 = 0$. よって$r_2 b_2 + \cdots + r_m b_m = 0$であるから$r_1 = \cdots = r_m = 0$が成り立つ. よって$B_0'$は(i)を満たすが, これは$B_0$の極大性に矛盾するので$B_0$は(ii)を満たす.\\
+(ii)のような表示が一意的であることを示す. $x$が$b_1, \cdots, b_k, b'_1, \cdots, b'_{k'} \in B_0$, $r_1, \cdots r_k, r'_1, \cdots, r'_{k'} \in \mathbb{Q}\\\{0\}$を用いて
+\begin{eqnarray*}
+	x
+	&=& r_1 b_1 + \cdots + r_k b_k\\
+	&=& r_1 b'_1 + \cdots + r_{k'} b'_{k'}
+\end{eqnarray*}
+の2通りで表されるとする. このとき相異なる$c_1, \cdots, c_l \in B_0$を$\{c_1, \cdots, c_l\} = \{b_1, \cdots, b_k, b'_1, \cdots, b'_{k'}\}$となるようにとる. また$s_i \in \mathbb{Q} (1 \le i \le l)$を
+\begin{eqnarray*}
+	s_i = \begin{cases}
+		r_k & (\exists j(s_i = b_j))\\
+		0 & (else)
+	\end{cases}
+\end{eqnarray*}
+と定める. 同様にして$r'_i$に対しても$t_i$を定める. このとき
+\begin{eqnarray*}
+	x
+	&=& s_1 c_1 + \cdots + s_l c_l\\
+	&=& t_1 c_1 + \cdots + t_l c_l
+\end{eqnarray*}
+であるから
+\begin{equation*}
+	(s_1 - t_1) c_1 + \cdots + (s_l - t_l) c_l = 0
+\end{equation*}
+が成り立つ. ゆえに(i)より$s_1 = t_1, \cdots, s_l = t_l$が成り立つ. 今$\{c_1, \cdots, c_l\} \neq \{b_1, \cdots, b_k\}$と仮定すると$c_i \notin \{b_1, \cdots, b_k\}$がとれるが, このとき$c_i \in \{b'_1, \cdots, b'_{k'}\}$であるから$s_i = 0 < t_i$となり矛盾するため$\{c_1, \cdots, c_l\} = \{b_1, \cdots, b_k\}$. 同様に$\{c_1, \cdots, c_l\} = \{b'_1, \cdots, b'_{k'}\}$. よって$\{b_1, r_1\},\cdots, \{b_k, r_k\}$と$\{b'_1, r'_1\}, \cdots, \{b'_{k'}, r'_{k'}\}$は順番を除いて一致する.
+
+\subsection{} % subsection4	
+(a) $f, f', f'' \in \mathfrak{F}$とする. \\
+$D(f) \subset D(f)$かつ$D(f)$上で$f = f$なので反射律を満たす.\\
+$f \le f'$かつ$f' \le f$ならば$D(f) \subset D(f') \subset D(f)$なので$D(f) = D(f')$であり, $D(f) = D(f')$上で$f = f'$なので反対称律を満たす.\\
+$f \le f'$かつ$f' \le f''$ならば$D(f) \subset D(f') \subset D(f'')$より$D(f) \subset D(f'')$であり, $f''$は$D(f')$上, 特に$D(f)$上で$f'$に等しい為$D(f)$上で$f$に等しいため推移律を満たす.\\
+
+$S \subset \mathfrak{F}$を全順序部分集合とする. $D = \bigcup_{f \in \mathfrak{F}} D(f)$とする. 任意の$x \in D$に対して, $f \in S$が存在して$x \in D(f)$かつ任意の$f, f' \in S$に対して$x \in D(f)$かつ$x \in D(f')$ならば$f(x) = f'(x)$なので, 写像$g:A \rightarrow B$が定義出来て, $g$は任意の$f \in S$の拡大である. $g$が単射であることを示す. $x, x' \in D$が$g(x) = g(x')$を満たすとする. $f, f' \in \mathfrak{S}$が存在して$x \in D(f)$かつ$x' \in D(f')$を満たす. $S$は全順序なので$f \ge f'$としても一般性は失われない. $f(x) = g(x) = g(x') = f(x')$なので$f$の単射性より$x = x'$, すなわち$g$は単射なので$g \in \mathfrak{F}$であるから, $\mathfrak{F}$は帰納的である.
+
+(b) $D(f_0) \neq A$かつ$V(f_0) \neq B$ならば矛盾する. 実際そのとき$x \in A\\D(f_0)$及び$y \in B\\V(f_0)$が存在するので$f_1:D(f_0) \cup \{x\} \rightarrow B$を
+\begin{equation*}
+	f_1(t) = \begin{cases}
+		f_0(t) & (t \in A)\\
+		y & (t = x)
+	\end{cases}
+\end{equation*}
+として定義すれば, $f_1 \in \mathfrak{F}$かつ$f_0 < f_1$であり, $f_0$の極大性に矛盾する.
 
 \section{順序数} % section4
-\section{Zornの補題の応用} % section5
+\subsection{} %subsetction1
+整列集合$A, B, C, A', B'$が$A', B', C$は互いに素で, $\mu = ord A, \nu = ord B, \rho = ord C, \nu' = ord B', \mu' = ord A'$で, ある$b \in B', a \in A'$に対して$B = B'\langle b \rangle$, $A = A'\langle a \rangle$を満たすとする.\\
+(4.1) 両辺は$A \cup B \cup C$に入る順序の順序数であり, 2つの順序集合は任意の2元に対して全く同じ順序関係があるので順序同型であるから$(\mu + \nu) + \rho = \mu + (\nu + \rho)$.\\
+(4.2) 包含写像$g:A \cup B \rightarrow A \cup B'$は順序単射であり, $V(g) = (A \cup B')\langle b \rangle$なので, $\mu + \nu < \mu + \nu'$.\\
+(4.3) $A'' = \{x \in A' | x >= a\}$と定義すると, $A''$は空でない整列集合である. $ord A' + ord B = (ord A + ord A'') + ord B$であるから, $ord A'' + ord B \ge ord B$を示せれば(4.1)(4.2)から(4.3)が従う.\\
+$ord A'' + ord B < ord B$と仮定する. このとき降鎖$(x_n)$を以下のように帰納的に定義する. $ord B > ord A'' + ord B$なので$B\langle x_0 \rangle$が$A'' + B$と順序同型となるよう$x_0 \in B$を定義できる. このとき$ord A'' + ord B\langle x_0 \rangle < ord A'' + ord B = ord B\langle x_0 \rangle$. $x_n \in B$が定義されていて$ord A'' + ord B\langle x_n \rangle < ord B\langle x_n \rangle$を満たすとき, $(B\langle x_{n} \rangle)\langle x_{n + 1} \rangle = B\langle x_{n + 1}$が$A'' + B\langle x_n \rangle$と順序同型となるよう$x_{n + 1} \in B\langle x_n \rangle$を定義すると, $ord A'' + ord B\langle x_{n + 1} \rangle < ord A'' + ord B\langle x_{n} \rangle = ord B\langle x_{n + 1}\rangle$が成り立つ. よって$B$は降鎖を持つが, これは$B$が整列集合であることに矛盾する.\\
+よって$ord A'' + B \ge ord B$が成り立つ.
+
+\subsection{} %subsetction2
+
+
+\subsection{} %subsetction3
+\subsection{} %subsetction4
+\subsection{} %subsetction5
+\subsection{} %subsetction6
+\subsection{} %subsetction7
+\subsection{} %subsetction8
+\subsection{} %subsetction9
+\subsection{} %subsetction10
+\subsection{} %subsetction11
 
 \end{document}
