@@ -112,7 +112,7 @@ $C$を満たす$X$の部分集合の全体を$\mathfrak{M}$とする. $\mathfrak
 (i)は$C$の有限的な性質であることを示す. $B$を$\mathbb{R}$の任意の部分集合とする. $B$が(i)を満たすと仮定する. $B$の有限部分集合$B'$を任意にとる. $b_1, \cdots, b_m$を$B'$の相異なる元, $r_1, \cdots, r_m$を0でない有理数とするとき, $r_1 b_1 + \cdots + r_m b_m = 0$ならば, $b_1, \cdots, b_m$は$B$の相異なる元であるから(i)より$r_1 = \cdots = r_m = 0$が成り立つので$B'$は(i)を満たす. 逆に$B$の任意の有限部分集合が(i)を満たすと仮定する. $b_1, \cdots, b_m$を$B$の相異なる元, $r_1, \cdots, r_m$を0でない有理数とするとき, $B' = \{b_1, \cdots, b_m\}$は$B$の有限部分集合であるから(i)を満たすので, $b_1, \cdots, b_m$が$B'$の相異なる元であることから, $r_1 b_1 + \cdots + r_m b_m = 0$ならば$r_1 = \cdots = r_m = 0$が成り立つため, $B$は(i)を満たす.\\
 よってTukeyの補題により(i)を満たす$\mathbb{R}$の極大な部分集合が存在する. これを$B_0$とおく. $B_0$が(ii)を満たすことを示す.\\
 まず存在を背理法によって示す. $B_0$の元の線型結合によって表せない$\mathbb{R}$の元$x$が存在すると仮定する. $B_0' = B_0 \cup \{x\}$とする. $x \in B_0$と仮定すると$x = 1 \cdot x$として$B_0$の元の線型結合により表されてしまい矛盾するので, $x \notin B_0$であり$B_0' \neq B_0$である. また$B_0'$が(i)を満たすことを示す. $b_1, \cdots, b_m$を$B_0'$の相異なる元, $r_1, \cdots, r_m$を0でない有理数とし, $r_1 b_1 + \cdots + r_m b_m = 0$を満たすとする. もし$b_1, \cdots, b_m$に$x$が含まれなければ$B_0$が(i)を満たすことにより$r_1 = \cdots = r_m = 0$が成り立つ. 一方もし$b_1, \cdots, b_m$に$x$が含まれるならば, $b_1 = x$としても一般性は失われない. $r_1 \neq 0$と仮定すると$x = \left(-\dfrac{r_2}{r_1}\right) b_2 + \cdots + \left(-\dfrac{r_m}{r_1}\right) b_m = 0$となり$x$の定義に矛盾するので$r_1 = 0$. よって$r_2 b_2 + \cdots + r_m b_m = 0$であるから$r_1 = \cdots = r_m = 0$が成り立つ. よって$B_0'$は(i)を満たすが, これは$B_0$の極大性に矛盾するので$B_0$は(ii)を満たす.\\
-(ii)のような表示が一意的であることを示す. $x$が$b_1, \cdots, b_k, b'_1, \cdots, b'_{k'} \in B_0$, $r_1, \cdots r_k, r'_1, \cdots, r'_{k'} \in \mathbb{Q}\\\{0\}$を用いて
+(ii)のような表示が一意的であることを示す. $x$が$b_1, \cdots, b_k, b'_1, \cdots, b'_{k'} \in B_0$, $r_1, \cdots r_k, r'_1, \cdots, r'_{k'} \in \mathbb{Q} \backslash \{0\}$を用いて
 \begin{eqnarray*}
 	x
 	&=& r_1 b_1 + \cdots + r_k b_k\\
@@ -161,19 +161,73 @@ $S \subset \mathfrak{F}$を全順序部分集合とする. $D = \bigcup_{f \in \
 (4.2) 包含写像$g:A \cup B \rightarrow A \cup B'$は順序単射であり, $V(g) = (A \cup B')\langle b \rangle$なので, $\mu + \nu < \mu + \nu'$.\\
 (4.3) $A'' = \{x \in A' | x >= a\}$と定義すると, $A''$は空でない整列集合である. $ord A' + ord B = (ord A + ord A'') + ord B$であるから, $ord A'' + ord B \ge ord B$を示せれば(4.1)(4.2)から(4.3)が従う.\\
 $ord A'' + ord B < ord B$と仮定する. このとき降鎖$(x_n)$を以下のように帰納的に定義する. $ord B > ord A'' + ord B$なので$B\langle x_0 \rangle$が$A'' + B$と順序同型となるよう$x_0 \in B$を定義できる. このとき$ord A'' + ord B\langle x_0 \rangle < ord A'' + ord B = ord B\langle x_0 \rangle$. $x_n \in B$が定義されていて$ord A'' + ord B\langle x_n \rangle < ord B\langle x_n \rangle$を満たすとき, $(B\langle x_{n} \rangle)\langle x_{n + 1} \rangle = B\langle x_{n + 1}$が$A'' + B\langle x_n \rangle$と順序同型となるよう$x_{n + 1} \in B\langle x_n \rangle$を定義すると, $ord A'' + ord B\langle x_{n + 1} \rangle < ord A'' + ord B\langle x_{n} \rangle = ord B\langle x_{n + 1}\rangle$が成り立つ. よって$B$は降鎖を持つが, これは$B$が整列集合であることに矛盾する.\\
-よって$ord A'' + B \ge ord B$が成り立つ.
+よって$ord A'' + ord B \ge ord B$が成り立つ.
 
 \subsection{} %subsetction2
-
+$\mu < \nu$を仮定する. 整列集合$A$及び$a \in A$を$ord A = \nu$, $ord A\langle a\rangle = \mu$となるようにとれる. このとき$B = \{x \in A | x \ge a\}$と定義すると, $A\langle a \rangle  + B = A$かつ$B \neq \phi$なので$\rho = ord B$とすると$\nu = \mu + \rho$かつ$\rho > 0$.\\
+$\nu = \mu + \rho$かつ$\rho > 0$を満たすような順序数$\rho$が存在すると仮定する. 互いに素な集合$A, B$を$ord A = \mu, ord B = \rho$と満たすようにとると, $\nu = ord (A + B)$である. $A = (A + B)\langle min B \rangle$であるから$\mu < \nu$.
 
 \subsection{} %subsetction3
+$\mu + \nu < \mu + \nu' \Rightarrow \nu < \nu'$の対偶$\nu' \le \nu \Rightarrow \mu + \nu' \le \mu + \nu$を示す. $\nu' = \nu$ならば明らかに$\mu + \nu' = \mu + \nu$であるし, $\nu' < \nu$ならば(4.2)より$\mu + \nu' < \mu + \nu$が成り立つ.\\
+$\mu + \nu = \mu + \nu' \Rightarrow \nu = \nu'$を示すためには対偶$\nu' \neq \nu \Rightarrow \mu + \nu' \neq \mu + \nu$を示せばよいが, これは順序数が全順序であることと(4.2)から明らかである.\\
+$\mu + \nu = \mu' + \nu \Rightarrow \mu = \mu'$は必ずしも成り立たない. 実際$\mu = 0, \mu' = 1, \nu = \omega$の場合が, $\mu + \nu = \mu' + \nu = \omega$かつ$\mu \neq \mu'$であり反例となる.
+
 \subsection{} %subsetction4
+集合$A, B, C, A', B'$を$A', B', C$が互いに素かつ$ord A = \mu, ord B = \nu, ord C = \rho, ord A' = \mu', ord B' = \nu'$かつ$A'\langle a \rangle = A, B'\langle b \rangle = B$となるように定義する.\\
+(4.4) 両辺は$A \times B \times C$に入る整列順序の順序数であり, 2つの整列集合は任意の2元に対して全く同じ順序関係があるので順序同型であるから$(\mu\nu)\rho=\mu(\nu\rho)$が成り立つ.\\
+(4.5) $A \times B = (A \times B')\langle (min A, b) \rangle$であるから$\mu\nu < \mu\nu'$.\\
+(4.6) $\mu\nu > \mu'\nu$と仮定する. このとき次のように帰納的に降鎖$(x_n)$を定義できる. $ord (A \times B)\langle x_0\rangle = ord A' \times B$となるように$x_0 \in A \times B$を定義できる. このとき$ord (A' \times B)\langle x_0 \rangle < ord A' \times B = ord (A \times B)\langle x_0 \rangle$. $x_n \in A \times B$が定義されていて$ord (A' \times B)\langle x_n \rangle < ord (A \times B)\langle x_n \rangle$を満たすとき, $((A \times B)\langle x_{n} \rangle)\langle x_{n + 1} \rangle = (A \times B)\langle x_{n + 1}\rangle$が$(A' \times B)\langle x_n \rangle$と順序同型となるよう$x_{n + 1} \in (A \times B)\langle x_n \rangle$を定義すると, $ord (A' \times B)\langle x_{n + 1} \rangle < ord (A'\times B)\langle x_{n} \rangle = ord (A \times B)\langle x_{n + 1}\rangle$が成り立つ. よって$A \times B$は降鎖を持つが, これは$A \times B$が整列集合であることに矛盾する.\\
+よって$ord A ord B \le ord A' ord B$が成り立つ.
+
 \subsection{} %subsetction5
+任意に$n \in \mathbb{N}$をとる. 整列集合$A = {0, \cdots, n - 1} \times \mathbb{N}$を定義すると$ord A = n\omega$. 写像$f:\mathbb{N} \rightarrow A$を$f(i, j) = jn + i$と定義すると$f$は順序同型写像なので$\omega = n\omega$.
+
 \subsection{} %subsetction6
+$\mu\nu < \mu\nu' \Rightarrow \nu < \nu'$の対偶$\nu \ge \nu' \Rightarrow \mu\nu \ge \mu\nu'$を示す. $\nu = \nu'$または$\mu = 0$ならば明らかに$\mu\nu = \mu\nu'$であるし, $\mu > 0$かつ$\nu > \nu'$ならば(4.5)より$\mu\nu > \mu\nu'$である.\\
+$\mu\nu = \mu\nu', 0 < \mu \Rightarrow \nu = \nu'$を示すためにはと同値な命題$\nu \neq \nu', 0 < \mu \Rightarrow \mu\nu \neq \mu\nu'$を示せばよいが, これは順序数が全順序なことと(4.5)\\
+$\mu\nu = \mu'\nu, 0 < \mu \Rightarrow \mu = \mu'$は必ずしも成り立たない. 実際$\mu = 2, \nu = \omega$が前問より反例となる.
+
 \subsection{} %subsetction7
+集合$A, B, C$を$A$と$B$が互いに素かつ$ord A = \mu, ord B = \nu, ord C = \rho$となるようにとる. (4.7)の両辺は$C \times (A \cup B) = (C \times A) \cup (C \times B)$に入る順序の順序数であり, 2つの順序集合は任意の2元に対して全く同じ順序関係があるので順序同型であるから$\rho(\mu + \nu) = \rho^mu + \rho\nu$.\\
+$(\mu + \nu)\rho = \mu\rho + \nu\rho$は$\mu = \nu = 1, \rho = \omega$の場合が前問より反例となる.
+
 \subsection{} %subsetction8
+\begin{eqnarray*}
+	\mu が孤立数
+	&\Leftrightarrow& 直前の順序数\nu が存在して, かつ\nu = ord A\langle M \rangle を満たすM \in Aが存在する.\\
+	&\Leftrightarrow& M \in Aが存在して, \rho < \mu を満たす任意の順序数\rho に対して, \rho \le ord A\langle M \rangle を満たす.\\
+	&\Leftrightarrow& M \in Aが存在して, 任意のx \in Aに対して, A\langle x \rangle \le \langle M \rangle を満たす.\\
+	&\Leftrightarrow& M \in Aが存在して, 任意のx \in Aに対して, x \le Mを満たす.\\
+	&\Leftrightarrow& Aには最大値が存在する.
+\end{eqnarray*}
+
 \subsection{} %subsetction9
+互いに素な集合$A, B$を$ord A = \mu, ord B = \nu$を満たすようにとる.\\
+前問より
+\begin{eqnarray*}
+	\nu が孤立数
+	&\Leftrightarrow& Aに最大値Mが存在\\
+	&\Leftrightarrow& A + Bに最大値Mが存在\\
+	&\Leftrightarrow& \mu + \nu が孤立数
+\end{eqnarray*}
+また
+\begin{eqnarray*}
+	\mu および \nu がともに孤立数
+	&\Leftrightarrow& A, Bにそれぞれ最大値M_0, M_1が存在\\
+	&\Leftrightarrow& A \times Bに最大値(M_0, M_1)が存在\\
+	&\Leftrightarrow& \mu \nu が孤立数
+\end{eqnarray*}
+
 \subsection{} %subsetction10
+$n \in \mathbb{N}$, $(a_\alpha)_{\alpha \in \Lambda} \in A$に対して, $a_\alpha \neq e_\alpha$を満たす$\alpha \in \Lambda$のうち$n$番目に大きいものが存在すれば, それを$f_n((a_\alpha)_{\alpha \in \Lambda})$と書くこととする. また, $x \in A$に対して$f_n(x)$が存在することを$P(n)$と書くこととする.\\
+最小値の存在しない空でない部分集合$B \subset A$が存在すると仮定する. このとき$\Lambda$の降鎖$(x_n)$及び$B$の部分集合列$(S_n)$を次のように帰納的に定義できる.\\
+$S_0 = B$と定義する. $S_0$には最小限が存在しないので各元は$P(1)$を満たす.\\
+$S_n$が定義されていて, $S_n$は$B$または$B$の切片であり, $S_n$の各元は$P(n + 1)$を満たすと仮定する. $S_n$の各元$t$に対して$f_{n + 1}(t)$を対応させる写像の像は$\Lambda$の空でない部分集合であるから, その最小値を$x_n$と定義する. $f_{n + 1}(t) = x_n$となる$t \in \S_n$の全体を$S'$とすると, $(a_\alpha)_{\alpha \in \Lambda} \in S'$に対して$a_{x_n} \in A_{x_n}$を対応させる写像の像は$A_{x_n}$の空でない部分集合であるから, 最小値を$m$とする. この写像の$\{m\}$の逆像を$S_{n + 1}$と定義する. $S_{n + 1}$は明らかに$B$または$B$の切片である. また$P(n + 2)$を満たさない$S_{n + 1}$の元が存在すると仮定すると, それは$S_{n + 1}$の最小限となり矛盾するので, $S_{n + 1}$の各元は$P(n + 2)$を満たす.\\
+よって$\Lambda$には降鎖が存在するが, これは$\Lambda$が整列集合であることに矛盾するので, $A$は整列集合である.
+
 \subsection{} %subsetction11
+互いに素な整列集合$A, B, C$をそれぞれ順序数が$\mu, \nu, \rho$となるように定める.\\
+$\mu^\nu \mu^\rho = \mu^{\nu + \rho}$の両辺は$A^{B + C}$に入る整列順序の順序数であり, 全く同じ順序であるから両辺は等しい.\\
+写像$F:A^{B \times C} \rightarrow (A^B)^C$を$F(f)(a)(b) = f(a, b)$と定義するとこれは順序同型なので$(\mu^\nu)^\rho = \mu^{\nu\rho}$が成り立つ.
 
 \end{document}
